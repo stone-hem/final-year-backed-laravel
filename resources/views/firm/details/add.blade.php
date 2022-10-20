@@ -7,105 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{{ asset('stylings/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('stylings/forms.css') }}">
     <style>
-        .form-style-2 {
-            max-width: 500px;
-            padding: 20px 12px 10px 20px;
-            font: 13px Arial, Helvetica, sans-serif;
-        }
 
-        .form-style-2-heading {
-            font-weight: bold;
-            font-style: italic;
-            border-bottom: 2px solid #ddd;
-            margin-bottom: 20px;
-            font-size: 15px;
-            padding-bottom: 3px;
-        }
-
-        .form-style-2 label {
-            display: block;
-            margin: 0px 0px 15px 0px;
-        }
-
-        .form-style-2 label>span {
-            width: 100px;
-            font-weight: bold;
-            float: left;
-            padding-top: 8px;
-            padding-right: 5px;
-        }
-
-        .form-style-2 span.required {
-            color: red;
-        }
-
-        .form-style-2 .tel-number-field {
-            width: 40px;
-            text-align: center;
-        }
-
-        .form-style-2 input.input-field,
-        .form-style-2 .select-field {
-            width: 48%;
-        }
-
-        .form-style-2 input.input-field,
-        .form-style-2 .tel-number-field,
-        .form-style-2 .textarea-field,
-        .form-style-2 .select-field {
-            box-sizing: border-box;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            border: 1px solid #C2C2C2;
-            box-shadow: 1px 1px 4px #EBEBEB;
-            -moz-box-shadow: 1px 1px 4px #EBEBEB;
-            -webkit-box-shadow: 1px 1px 4px #EBEBEB;
-            border-radius: 3px;
-            -webkit-border-radius: 3px;
-            -moz-border-radius: 3px;
-            padding: 7px;
-            outline: none;
-        }
-
-        .form-style-2 .input-field:focus,
-        .form-style-2 .tel-number-field:focus,
-        .form-style-2 .textarea-field:focus,
-        .form-style-2 .select-field:focus {
-            border: 1px solid #0C0;
-        }
-
-        .form-style-2 .textarea-field {
-            height: 100px;
-            width: 55%;
-        }
-
-        .form-style-2 input[type=submit],
-        .form-style-2 input[type=button] {
-            border: none;
-            padding: 8px 15px 8px 15px;
-            background: #FF8500;
-            color: #fff;
-            box-shadow: 1px 1px 4px #DADADA;
-            -moz-box-shadow: 1px 1px 4px #DADADA;
-            -webkit-box-shadow: 1px 1px 4px #DADADA;
-            border-radius: 3px;
-            -webkit-border-radius: 3px;
-            -moz-border-radius: 3px;
-        }
-
-        .form-style-2 input[type=submit]:hover,
-        .form-style-2 input[type=button]:hover {
-            background: #EA7B00;
-            color: #fff;
-        }
-
-        .errors-here {
-            color: red;
-        }
-        .success-here{
-          color:green;
-        }
     </style>
 </head>
 
@@ -124,22 +28,36 @@
                     {{ session()->get('message') }}
                 </div>
             @endif
-            <form action="{{ url('firm/services/store') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ url('firm/details/store') }}" method="post" enctype="multipart/form-data">
                 @csrf
-                <label for="field1"><span>Service Name<span class="required">*</span></span>
-                    <input type="text" class="input-field" name="service_name" value="{{ old('service_name') }}" />
+                <label for="field1"><span>Firm Name<span class="required">*</span></span>
+                    <input type="text" class="input-field" name="firm_name" value="{{ old('firm_name', $details->name??" first name...") }}" />
                 </label>
-                @error('service_name')
+                @error('firm_name')
                     <div class="errors-here">{{ $message }}</div>
                 @enderror
-                <label for="field2"><span>Service Image<span class="required">*</span></span>
-                    <input type="file" class="input-field" name="service_image"  value="{{ old('service_image') }}"/>
+                <label for="field1"><span>Firm Kra Pin<span class="required">*</span></span>
+                    <input type="text" class="input-field" name="firm_kra" value="{{ old('firm_kra', $details->kra_pin??" kra...") }}" />
                 </label>
-                @error('service_image')
+                @error('firm_kra')
+                    <div class="errors-here">{{ $message }}</div>
+                @enderror
+                <label for="firm_contact"><span>Firm Contact<span class="required">*</span></span>
+                    <input type="text" class="input-field" name="firm_contact" value="{{ old('firm_contact', $details->phone_number??" Phone number..") }}" />
+                </label>
+                @error('firm_contact')
+                    <div class="errors-here">{{ $message }}</div>
+                @enderror
+                <label for="field2"><span>Firm Image<span class="required">*</span></span>
+                    <input type="file" class="input-field" name="firm_image"  value="{{ old('firm_image', $details->org_pic??" pic..") }}"/>
+                </label>
+                @error('firm_image')
                     <div class="errors-here">{{ $message }}</div>
                 @enderror
                 <label for="field5"><span>Description<span class="required">*</span></span>
-                    <textarea name="description" class="textarea-field" value="{{ old('description') }}"></textarea>
+                    <textarea name="description" class="textarea-field" >
+                        {{ old('description', $details->description??" description..") }}
+                    </textarea>
                 </label>
                 @error('description')
                     <div class="errors-here">{{ $message }}</div>

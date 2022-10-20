@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class ServiceController extends Controller
 {
     public function index(){
-        $service=Service::paginate(10);
+        $service=Service::where('user_id',Auth::user()->id)->get();
         return view('firm.services.index',compact('service'));
     }
     public function create(){

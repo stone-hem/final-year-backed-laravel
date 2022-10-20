@@ -107,7 +107,7 @@
               <h3>hi, firm</h3>
             </li>
             <li>
-              <a href="#0">
+              <a href="{{ url('firm/dashboard/') }}">
                 <svg>
                   <use xlink:href="#charts"></use>
                 </svg>

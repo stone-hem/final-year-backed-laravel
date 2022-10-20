@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Clerk\ClerkMembersController;
+use App\Http\Controllers\Firm\FirmDashboardController;
 use App\Http\Controllers\Firm\FirmDetailController;
 use App\Http\Controllers\Firm\ServiceController;
 use App\Http\Controllers\HomeController;
@@ -21,15 +22,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
+// Route::middleware([
+//     'auth:sanctum',
+//     config('jetstream.auth_session'),
+//     'verified'
+// ])->group(function () {
+//     Route::get('/dashboard', function () {
+//         return view('dashboard');
+//     })->name('dashboard');
+// });
 
 Route::get('homepage',[HomeController::class,'index']);
 
@@ -46,3 +47,8 @@ Route::controller(FirmDetailController::class)->group(function(){
     Route::get('firm/details/create','create');
     Route::post('firm/details/store','store');
 });
+
+Route::controller(FirmDashboardController::class)->group(function(){
+    Route::get('firm/dashboard/','index');
+});
+

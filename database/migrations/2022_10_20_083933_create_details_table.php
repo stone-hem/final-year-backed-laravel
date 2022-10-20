@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('description');
             $table->string('org_pic')->nullable();
             $table->string('location')->nullable()->default('Nairobi');
-            $table->bigInteger('kra_pin')->nullable();
-            $table->bigInteger('phone_number')->nullable();
+            $table->string('kra_pin')->nullable();
+            $table->string('phone_number')->nullable();
             $table->boolean('is_approved')->default(0);
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->timestamps();
