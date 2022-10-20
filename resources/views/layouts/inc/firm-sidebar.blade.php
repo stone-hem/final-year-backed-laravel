@@ -109,9 +109,17 @@
             <li>
               <a href="#0">
                 <svg>
+                  <use xlink:href="#charts"></use>
+                </svg>
+                <span>My dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="{{ url('firm/services') }}">
+                <svg>
                   <use xlink:href="#pages"></use>
                 </svg>
-                <span>Firms</span>
+                <span>My services</span>
               </a>
             </li>
             <li>
@@ -119,7 +127,7 @@
                 <svg>
                   <use xlink:href="#users"></use>
                 </svg>
-                <span>Technicians</span>
+                <span>Update my Details</span>
               </a>
             </li>
             <li>
@@ -127,7 +135,7 @@
                 <svg>
                   <use xlink:href="#trends"></use>
                 </svg>
-                <span>Users</span>
+                <span>Trends</span>
               </a>
             </li>
             <li>
@@ -135,17 +143,17 @@
                 <svg>
                   <use xlink:href="#collection"></use>
                 </svg>
-                <span>Trends</span>
+                <span>My clients</span>
               </a>
             </li>
-            <li>
+            {{-- <li>
               <a href="#0">
                 <svg>
                   <use xlink:href="#comments"></use>
                 </svg>
                 <span>Comments</span>
               </a>
-            </li>
+            </li> --}}
             <li>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf

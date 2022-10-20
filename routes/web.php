@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Clerk\ClerkMembersController;
+use App\Http\Controllers\Firm\ServiceController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,8 +32,10 @@ Route::middleware([
 
 Route::get('homepage',[HomeController::class,'index']);
 
-Route::controller(ClerkMembersController::class)->group(function(){
-    Route::get('clerk-members','index');
-        Route::get('clerk-add-members','create');
-        Route::post('store-members','store');
+Route::controller(ServiceController::class)->group(function(){
+    Route::get('firm/services','index');
+    Route::get('firm/services/create','create');
+    Route::post('firm/services/store','store');
+    Route::get('firm/services/edit','edit');
+    Route::post('firm/services/update','update');
 });
