@@ -1,16 +1,29 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Firm dashboard
-        </h2>
-    </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                firm
-                <x-jet-welcome />
-            </div>
-        </div>
-    </div>
-</x-app-layout>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ asset('stylings/style.css') }}">
+</head>
+<body>
+    @include('layouts.inc.firm-sidebar')
+    @section('firm-sidebar')
+    @endsection
+      <section class="page-content">
+        @include('layouts.inc.firm-nav')
+        @section('firm-nav')
+        @endsection
+        <section class="grid">
+          <article></article>
+          <article></article>
+        </section>
+        <footer class="page-footer">
+          <span>made by someone</span>
+          
+        </footer>
+      </section>
+      <script src="{{ asset('js/script.js') }}"></script>
+</body>
+</html>

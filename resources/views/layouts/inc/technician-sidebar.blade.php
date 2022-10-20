@@ -104,7 +104,7 @@
           </button>
           <ul class="admin-menu">
             <li class="menu-heading">
-              <h3>Admin</h3>
+              <h3>hi,technician</h3>
             </li>
             <li>
               <a href="#0">
@@ -205,6 +205,6 @@
         </nav>
       </header>
       <script src="{{ asset('js/script.js') }}"></script>
-      @yield('admin-sidebar')
+      @yield('technician-sidebar')
 </body>
 </html>
