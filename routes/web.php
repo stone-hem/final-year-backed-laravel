@@ -5,6 +5,8 @@ use App\Http\Controllers\Firm\FirmDashboardController;
 use App\Http\Controllers\Firm\FirmDetailController;
 use App\Http\Controllers\Firm\ServiceController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Technician\TechnicianDashboardController;
+use App\Http\Controllers\Technician\TechnicianServiceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -52,3 +54,15 @@ Route::controller(FirmDashboardController::class)->group(function(){
     Route::get('firm/dashboard/','index');
 });
 
+
+Route::controller(TechnicianDashboardController::class)->group(function(){
+    Route::get('technician/dashboard','index');
+});
+
+Route::controller(TechnicianServiceController::class)->group(function(){
+    Route::get('technician/services','index');
+    Route::get('technician/services/create','create');
+    Route::post('technician/services/store','store');
+    Route::get('technician/services/edit','edit');
+    Route::post('technician/services/update','update');
+});
