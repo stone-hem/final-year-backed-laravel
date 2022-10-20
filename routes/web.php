@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Clerk\ClerkMembersController;
+use App\Http\Controllers\Firm\FirmDetailController;
 use App\Http\Controllers\Firm\ServiceController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -38,4 +39,10 @@ Route::controller(ServiceController::class)->group(function(){
     Route::post('firm/services/store','store');
     Route::get('firm/services/edit','edit');
     Route::post('firm/services/update','update');
+});
+
+Route::controller(FirmDetailController::class)->group(function(){
+    Route::get('firm/details/','index');
+    Route::get('firm/details/create','create');
+    Route::post('firm/details/store','store');
 });

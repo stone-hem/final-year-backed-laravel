@@ -118,7 +118,7 @@
         @section('firm-nav')
         @endsection
         <div class="form-style-2">
-            <div class="form-style-2-heading">Provide service information</div>
+            <div class="form-style-2-heading">Provide Details information</div>
             @if (session()->has('message'))
                 <div class="success-here">
                     {{ session()->get('message') }}

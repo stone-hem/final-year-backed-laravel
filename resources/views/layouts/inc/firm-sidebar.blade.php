@@ -115,7 +115,7 @@
               </a>
             </li>
             <li>
-              <a href="{{ url('firm/services') }}">
+              <a href="{{ url('firm/services/') }}">
                 <svg>
                   <use xlink:href="#pages"></use>
                 </svg>
@@ -123,7 +123,7 @@
               </a>
             </li>
             <li>
-              <a href="#0">
+              <a href="{{ url('firm/details/') }}">
                 <svg>
                   <use xlink:href="#users"></use>
                 </svg>
