@@ -28,15 +28,7 @@ class TechnicianDetailController extends Controller
 
         $detail=new Detail();
 
-        // if($request->hasFile('technician_image')){ //if the user has a file then do...
-        //     $file=$request->file('technician_image');
-        //     $ext=$file->getClientOriginalExtension();
-        //     $filename=time().'.'.$ext; //creating a unique filename
-        //     $file->move('assets/firms',$filename);//move the file to the server by creating its path
-        //     $detail->org_pic=$filename;//storing the file name
-        // }
-
-        $image_path = $request->file('service_image')->store('image', 'public');
+        $image_path = $request->file('technician_image')->store('service','public');
         $detail->org_pic=$image_path;
 
         $detail->name=$request->input('technician_name');

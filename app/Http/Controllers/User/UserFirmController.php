@@ -19,6 +19,7 @@ class UserFirmController extends Controller
                 'details.phone_number', 
                 'users.name as owner', 
                 'users.email')
+                ->where('users.role',1)
             ->get();
         return view('user.firms.index', compact('firm'));
     }

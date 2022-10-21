@@ -11,6 +11,8 @@ use App\Http\Controllers\Technician\TechnicianServiceController;
 use App\Http\Controllers\Technician\TechnicianDashboardController;
 use App\Http\Controllers\User\UserDashboardController;
 use App\Http\Controllers\User\UserFirmController;
+use App\Http\Controllers\User\UserServiceController;
+use App\Http\Controllers\User\UserTechnicianController;
 
 /*
 |--------------------------------------------------------------------------
@@ -84,5 +86,13 @@ Route::controller(UserDashboardController::class)->group(function(){
 
 Route::controller(UserFirmController::class)->group(function(){
     Route::get('user/firms','index');
+});
+
+Route::controller(UserTechnicianController::class)->group(function(){
+    Route::get('user/technicians','index');
+});
+
+Route::controller(UserServiceController::class)->group(function(){
+    Route::get('user/services','index');
 });
 

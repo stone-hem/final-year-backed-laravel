@@ -44,6 +44,7 @@ tbody tr:hover {
 
 .arrange-items .add-another a:hover{
     background-color: #EA7B00;
+    color: white;
  }
 .image-style{
     width: 100%;
@@ -55,4 +56,8 @@ tbody tr:hover {
 .btn-danger{
     background-color: red;
     padding: 8px 8px;
+}
+
+.style-image{
+    max-width:50px ;
 }

@@ -128,20 +128,20 @@
                 <span>Firms</span>
               </a>
             </li>
-            <li>
-              <a href="#0">
+            <li class="{{ request()->is('user/technicians*') ? 'active' : '' }}">
+              <a href="{{ url('user/technicians') }}">
                 <svg>
                   <use xlink:href="#trends"></use>
                 </svg>
-                <span>Users</span>
+                <span>Technicians</span>
               </a>
             </li>
-            <li>
-              <a href="#0">
+            <li class="{{ request()->is('user/services*') ? 'active' : '' }}">
+              <a href="{{ url('user/services') }}">
                 <svg>
                   <use xlink:href="#collection"></use>
                 </svg>
-                <span>Trends</span>
+                <span>Services</span>
               </a>
             </li>
             <li>

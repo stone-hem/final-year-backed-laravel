@@ -1,13 +1,15 @@
 .update-firm-details {
     margin-top: 20px;
-    background-color: #FF8500;
+    background-color: #E2B842;
     padding: 8px 8px;
     width: 13%;
+    border-radius: 8px;
 }
 
 .update-firm-details:hover {
     background-color: #EA7B00;
 }
+
 
 img {
     max-width: 100%;

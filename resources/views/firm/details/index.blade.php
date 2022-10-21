@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ asset('stylings/style.css') }}">
     <link rel="stylesheet" href="{{ asset('stylings/profile.css') }}">
     <style>
-      
+     
     </style>
 </head>
 
@@ -24,8 +24,9 @@
         <h2> My details</h2>
 
         @if (!$details)
-            <p>You have not Updated your details, do so now.. <a href="{{ url('firm/details/create') }}">Update
-                    Details</a> </p>
+            <p>You have not Updated your details, you won't add services, kindly update now..
+                <a href="{{ url('firm/details/create') }}" class="update-firm-details">Update Details</a>
+            </p>
         @else
             <div class="profile-card">
                 <div class="img">
