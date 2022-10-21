@@ -7,20 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{{ asset('stylings/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('stylings/profile.css') }}">
     <style>
-       .details-style{
-        display: flex;
-        flex-direction: column;
-       }
-       .update-firm-details{
-        margin-top: 20px;
-        background-color: #FF8500;
-        padding: 8px 8px;
-        width:13%;
-       }
-       .update-firm-details:hover{
-        background-color: #EA7B00;
-       }
+        .details-style {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .update-firm-details {
+            margin-top: 20px;
+            background-color: #FF8500;
+            padding: 8px 8px;
+            width: 13%;
+        }
+
+        .update-firm-details:hover {
+            background-color: #EA7B00;
+        }
     </style>
 </head>
 
@@ -33,22 +36,45 @@
         @section('technician-nav')
         @endsection
         <h2> My details</h2>
-     
-      @if(!$details)
-    <p>You have not Updated your details, do so now.. <a href="{{ url('technician/details/create/') }}">Update Details</a> </p>
-@else
-    <div class="details-style">
-        <span>
-            Firm Name: {{ $details->name }}
-        </span>
-<span>Firm Description: {{ $details->description }} </span>
-<span>Firm Kra: {{ $details->kra_pin }}</span>
-<span>Firm Location: {{ $details->location }}</span>
-<span>Firm Contact: {{ $details->phone_number }}</span>
-<span>Firm Profile Picture: <img src="{{asset('storage/'.$item->org_pic)}}" class="image-style" alt="image to be uploaded"></span>
-<a href="{{ url('technician/details/create/') }}" class="update-firm-details">Update Details</a>
-    </div>
-@endif
+
+        @if (!$details)
+            <p>You have not Updated your details, do so now.. <a href="{{ url('technician/details/create/') }}">Update
+                    Details</a> </p>
+        @else
+            <div class="profile-card">
+                <div class="img">
+                    <img src="{{ asset('storage/' . $details->org_pic) }}" class="image-style"
+                        alt="image to be uploaded">
+                </div>
+                <div class="infos">
+                    <div class="name">
+                        <h2>{{ $details->name }}</h2>
+                        <h4>{{ $details->location }}</h4>
+                    </div>
+                    <p class="text">
+                        {{ $details->description }}
+                    </p>
+                    <ul class="stats">
+                        <li>
+                            <h3>Kra pin</h3>
+                            <h4>{{ $details->kra_pin }}</h4>
+                        </li>
+                        <li>
+                            <h3>Phone</h3>
+                            <h4>{{ $details->phone_number }}</h4>
+                        </li>
+                        <li>
+                            <h3>Location</h3>
+                            <h4>{{ $details->location }}</h4>
+                        </li>
+                    </ul>
+                    <div class="links">
+                        <button class="follow"><a href="{{ url('firm/details/create/') }}">Update Details</a></button>
+                        {{-- <button class="view">View profile</button> --}}
+                    </div>
+                </div>
+            </div>
+        @endif
         <footer class="page-footer">
             <span>made by someone</span>
         </footer>

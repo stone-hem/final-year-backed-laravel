@@ -34,7 +34,7 @@ class ServiceController extends Controller
         // }
        
 
-        $image_path = $request->file('service_image')->store('image', 'public');
+        $image_path = $request->file('service_image')->store('service', 'public');
         $service->picture=$image_path;
         $service->name=$request->input('service_name');
         $service->description=$request->input('description');
