@@ -11,10 +11,10 @@ class TechnicianServiceController extends Controller
 {
     public function index(){
         $service=Service::where('user_id',Auth::user()->id)->get();
-        return view('firm.services.index',compact('service'));
+        return view('technician.services.index',compact('service'));
     }
     public function create(){
-        return view('firm.services.add');
+        return view('technician.services.add');
     }
     public function store(Request $request){
         $validated=$request->validate([
@@ -25,13 +25,16 @@ class TechnicianServiceController extends Controller
 
         $service=new Service();
 
-        if($request->hasFile('service_image')){ //if the user has a file then do...
-            $file=$request->file('service_image');
-            $ext=$file->getClientOriginalExtension();
-            $filename=time().'.'.$ext; //creating a unique filename
-            $file->move('assets/services',$filename);//move the file to the server by creating its path
-            $service->picture=$filename;//storing the file name
-        }
+        // if($request->hasFile('service_image')){ //if the user has a file then do...
+        //     $file=$request->file('service_image');
+        //     $ext=$file->getClientOriginalExtension();
+        //     $filename=time().'.'.$ext; //creating a unique filename
+        //     $file->move('assets/services',$filename);//move the file to the server by creating its path
+        //     $service->picture=$filename;//storing the file name
+        // }
+
+        $image_path = $request->file('service_image')->store('image', 'public');
+        $service->picture=$image_path;
 
         $service->name=$request->input('service_name');
         $service->description=$request->input('description');

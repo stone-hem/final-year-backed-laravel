@@ -6,6 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('stylings/style.css') }}">
     <title>Document</title>
+    <style>
+      .active{
+        color:#E2B842;
+        background-color:#1d2636 ;
+      }
+    </style>
 </head>
 <body>
     <svg style="display:none;">
@@ -106,7 +112,7 @@
             <li class="menu-heading">
               <h3>hi, firm</h3>
             </li>
-            <li>
+            <li class="{{ request()->is('firm/dashboard') ? 'active' : '' }}">
               <a href="{{ url('firm/dashboard/') }}">
                 <svg>
                   <use xlink:href="#charts"></use>
@@ -114,7 +120,7 @@
                 <span>My dashboard</span>
               </a>
             </li>
-            <li>
+            <li class="{{ request()->is('firm/services*') ? 'active' : '' }}">
               <a href="{{ url('firm/services/') }}">
                 <svg>
                   <use xlink:href="#pages"></use>
@@ -122,7 +128,7 @@
                 <span>My services</span>
               </a>
             </li>
-            <li>
+            <li class="{{ request()->is('firm/details*') ? 'active' : '' }}">
               <a href="{{ url('firm/details/') }}">
                 <svg>
                   <use xlink:href="#users"></use>

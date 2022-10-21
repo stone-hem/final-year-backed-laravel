@@ -28,35 +28,35 @@
                     {{ session()->get('message') }}
                 </div>
             @endif
-            <form action="{{ url('firm/details/store') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ url('technician/details/store') }}" method="post" enctype="multipart/form-data">
                 @csrf
-                <label for="field1"><span>Firm Name<span class="required">*</span></span>
-                    <input type="text" class="input-field" name="firm_name" value="{{ old('firm_name', $details->name??" first name...") }}" />
+                <label for="field1"><span>Technician Name<span class="required">*</span></span>
+                    <input type="text" class="input-field" name="technician_name" placeholder="name" value="{{ old('technician_name', $details->name??" ") }}" />
                 </label>
-                @error('firm_name')
+                @error('technician_name')
                     <div class="errors-here">{{ $message }}</div>
                 @enderror
                 <label for="field1"><span>Firm Kra Pin<span class="required">*</span></span>
-                    <input type="text" class="input-field" name="firm_kra" value="{{ old('firm_kra', $details->kra_pin??" kra...") }}" />
+                    <input type="text" class="input-field" name="technician_kra" value="{{ old('technician_kra', $details->kra_pin??"") }}" placeholder="kra.."/>
                 </label>
-                @error('firm_kra')
+                @error('technician_kra')
                     <div class="errors-here">{{ $message }}</div>
                 @enderror
-                <label for="firm_contact"><span>Firm Contact<span class="required">*</span></span>
-                    <input type="text" class="input-field" name="firm_contact" value="{{ old('firm_contact', $details->phone_number??" Phone number..") }}" />
+                <label for="technician_contact"><span>Firm Contact<span class="required">*</span></span>
+                    <input type="text" class="input-field" name="technician_contact" value="{{ old('technician_contact', $details->phone_number??"") }}" placeholder="phone.." />
                 </label>
-                @error('firm_contact')
+                @error('technician_contact')
                     <div class="errors-here">{{ $message }}</div>
                 @enderror
                 <label for="field2"><span>Firm Image<span class="required">*</span></span>
-                    <input type="file" class="input-field" name="firm_image"  value="{{ old('firm_image', $details->org_pic??" pic..") }}"/>
+                    <input type="file" class="input-field" name="technician_image"  value="{{ old('technician_image', $details->org_pic??"") }}"/>
                 </label>
-                @error('firm_image')
+                @error('technician_image')
                     <div class="errors-here">{{ $message }}</div>
                 @enderror
                 <label for="field5"><span>Description<span class="required">*</span></span>
-                    <textarea name="description" class="textarea-field" >
-                        {{ old('description', $details->description??" description..") }}
+                    <textarea name="description" class="textarea-field" placeholder="descritpion.." >
+                        {{ old('description', $details->description??"") }}
                     </textarea>
                 </label>
                 @error('description')

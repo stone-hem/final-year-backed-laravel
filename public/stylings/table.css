@@ -37,6 +37,14 @@ tbody tr:hover {
     justify-content: space-between;
     margin: 0 20px;
 }
+.arrange-items .add-another a{
+   background-color: #E2B842;
+   padding: 8px 8px;
+}
+
+.arrange-items .add-another a:hover{
+    background-color: #EA7B00;
+ }
 .image-style{
     width: 100%;
 }

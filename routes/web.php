@@ -1,13 +1,16 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Firm\ServiceController;
+use App\Http\Controllers\Firm\FirmDetailController;
 use App\Http\Controllers\Clerk\ClerkMembersController;
 use App\Http\Controllers\Firm\FirmDashboardController;
-use App\Http\Controllers\Firm\FirmDetailController;
-use App\Http\Controllers\Firm\ServiceController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\Technician\TechnicianDashboardController;
+use App\Http\Controllers\Technician\TechnicianDetailController;
 use App\Http\Controllers\Technician\TechnicianServiceController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Technician\TechnicianDashboardController;
+use App\Http\Controllers\User\UserDashboardController;
+use App\Http\Controllers\User\UserFirmController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +39,7 @@ Route::get('/', function () {
 
 Route::get('homepage',[HomeController::class,'index']);
 
+//firm
 Route::controller(ServiceController::class)->group(function(){
     Route::get('firm/services','index');
     Route::get('firm/services/create','create');
@@ -54,7 +58,7 @@ Route::controller(FirmDashboardController::class)->group(function(){
     Route::get('firm/dashboard/','index');
 });
 
-
+//technician
 Route::controller(TechnicianDashboardController::class)->group(function(){
     Route::get('technician/dashboard','index');
 });
@@ -66,3 +70,19 @@ Route::controller(TechnicianServiceController::class)->group(function(){
     Route::get('technician/services/edit','edit');
     Route::post('technician/services/update','update');
 });
+
+Route::controller(TechnicianDetailController::class)->group(function(){
+    Route::get('technician/details/','index');
+    Route::get('technician/details/create','create');
+    Route::post('technician/details/store','store');
+});
+
+//user
+Route::controller(UserDashboardController::class)->group(function(){
+    Route::get('user/dashboard','index');
+});
+
+Route::controller(UserFirmController::class)->group(function(){
+    Route::get('user/firms','index');
+});
+

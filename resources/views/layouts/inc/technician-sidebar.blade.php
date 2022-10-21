@@ -8,7 +8,7 @@
     <title>Document</title>
     <style>
       .active{
-        color:aqua;
+        color:#E2B842;
         background-color:#1d2636 ;
       }
     </style>
@@ -120,16 +120,16 @@
                 <span>Dashboard</span>
               </a>
             </li>
-            <li class="{{ request()->is('technician/services/*') ? 'active' : '' }}">
-              <a href="{{ url('technician/services') }}">
+            <li class="{{ request()->is('technician/details*') ? 'active' : '' }}">
+              <a href="{{ url('technician/details') }}">
                 <svg>
                   <use xlink:href="#users"></use>
                 </svg>
                 <span>My details</span>
               </a>
             </li>
-            <li>
-              <a href="#0">
+            <li class="{{ request()->is('technician/services*') ? 'active' : '' }}">
+              <a  href="{{ url('technician/services') }}">
                 <svg>
                   <use xlink:href="#trends"></use>
                 </svg>

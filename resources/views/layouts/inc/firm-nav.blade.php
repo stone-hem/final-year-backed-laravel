@@ -8,7 +8,7 @@
       </button>
     </form>
     <div class="admin-profile">
-      <span class="greeting">Hello firm</span>
+      <span class="greeting">Hello {{ Auth::user()->name }}</span>
       <div class="notifications">
         <span class="badge">1</span>
         <svg>

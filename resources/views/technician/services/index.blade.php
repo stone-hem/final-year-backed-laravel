@@ -28,7 +28,7 @@
                     <a href="">View Pdf</a>
                 </div>
                 <div class="add-another">
-                    <a href="{{ url('firm/services/create') }}">Add Service</a>
+                    <a href="{{ url('technician/services/create') }}">Add Service</a>
                 </div>
             </div>
             <table>
@@ -49,9 +49,9 @@
                         <td>{{ $item->id }}
                         <td>{{  $item->name }}
                         <td>{{  $item->description }}
-                        <td><img src="{{asset('assets/services/'.$item->picture)}}" class="image-style" alt="image to be uploaded">
+                        <td><img src="{{asset('storage/'.$item->picture)}}" class="image-style" alt="image to be uploaded">
                         <td>{{  $item->rating }}
-                        <td>{{  $item->created_at }}
+                        <td>{{  $item->created_at->toDayDateTimeString() }}
                         <td><button class="btn-primary"> <a href="{{url('edit-brand/'.$item->id)}}">edit</a></button>
                         <td> <button class="btn-danger"> <a href="{{url('delete-brand/'.$item->id)}}">Delete</a></button>
                     @endforeach

@@ -35,7 +35,7 @@
         <h2> My details</h2>
      
       @if(!$details)
-    <p>You have not Updated your details, do so now.. <a href="{{ url('firm/details/create') }}">Update Details</a> </p>
+    <p>You have not Updated your details, do so now.. <a href="{{ url('technician/details/create/') }}">Update Details</a> </p>
 @else
     <div class="details-style">
         <span>
@@ -45,8 +45,8 @@
 <span>Firm Kra: {{ $details->kra_pin }}</span>
 <span>Firm Location: {{ $details->location }}</span>
 <span>Firm Contact: {{ $details->phone_number }}</span>
-<span>Firm Profile Picture: {{ $details->org_pic }}</span>
-<a href="{{ url('firm/details/create/') }}" class="update-firm-details">Update Details</a>
+<span>Firm Profile Picture: <img src="{{asset('storage/'.$item->org_pic)}}" class="image-style" alt="image to be uploaded"></span>
+<a href="{{ url('technician/details/create/') }}" class="update-firm-details">Update Details</a>
     </div>
 @endif
         <footer class="page-footer">

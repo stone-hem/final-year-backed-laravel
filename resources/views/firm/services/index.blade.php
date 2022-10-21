@@ -49,7 +49,7 @@
                         <td>{{ $item->id }}
                         <td>{{  $item->name }}
                         <td>{{  $item->description }}
-                        <td><img src="{{asset('assets/services/'.$item->picture)}}" class="image-style" alt="image to be uploaded">
+                        <td><img src="{{asset('storage/'.$item->picture)}}" class="image-style" alt="image to be uploaded">
                         <td>{{  $item->rating }}
                         <td>{{  $item->created_at }}
                         <td><button class="btn-primary"> <a href="{{url('edit-brand/'.$item->id)}}">edit</a></button>

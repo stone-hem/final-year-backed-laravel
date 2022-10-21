@@ -28,7 +28,7 @@
                     {{ session()->get('message') }}
                 </div>
             @endif
-            <form action="{{ url('firm/services/store') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ url('technician/services/store') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <label for="field1"><span>Service Name<span class="required">*</span></span>
                     <input type="text" class="input-field" name="service_name" value="{{ old('service_name') }}" />

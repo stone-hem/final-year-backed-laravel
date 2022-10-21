@@ -45,7 +45,7 @@
 <span>Firm Kra: {{ $details->kra_pin }}</span>
 <span>Firm Location: {{ $details->location }}</span>
 <span>Firm Contact: {{ $details->phone_number }}</span>
-<span>Firm Profile Picture: {{ $details->org_pic }}</span>
+<span>Firm Profile Picture: <img src="{{asset('storage/'.$details->org_pic)}}" class="image-style" alt="image to be uploaded"></span>
 <a href="{{ url('firm/details/create/') }}" class="update-firm-details">Update Details</a>
     </div>
 @endif
