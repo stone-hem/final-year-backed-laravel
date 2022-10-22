@@ -21,7 +21,7 @@
         @include('layouts.inc.user-nav')
         @section('user-nav')
         @endsection
-        <h2>Firms</h2>
+        <h2>All Firms</h2>
         <div class="card-container" style="display: flex;" >
             @foreach ($firm as $item)
             <div class="card">
@@ -36,6 +36,10 @@
                     <p>
                         {{ $item->description }}
                     </p>
+                    <div> 
+                        <a href="{{ url('user/firms/details/'.$item->id) }}"  class="tag tag-theme">more..</a>
+                        <a href="{{ url('user/firms/services/'.$item->id) }}"  class="tag tag-theme">our services..</a>
+                    </div>
                 </div>
             </div>
             @endforeach

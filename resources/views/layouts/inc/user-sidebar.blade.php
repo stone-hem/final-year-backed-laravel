@@ -144,12 +144,20 @@
                 <span>Services</span>
               </a>
             </li>
-            <li>
-              <a href="#0">
+            <li class="{{ request()->is('user/my-services*') ? 'active' : '' }}">
+              <a href="{{ url('user/my-services') }}">
                 <svg>
                   <use xlink:href="#comments"></use>
                 </svg>
-                <span>Comments</span>
+                <span>My services</span>
+              </a>
+            </li>
+            <li class="{{ request()->is('user/instant*') ? 'active' : '' }}">
+              <a href="{{ url('user/instant') }}">
+                <svg>
+                  <use xlink:href="#comments"></use>
+                </svg>
+                <span>Request instant help</span>
               </a>
             </li>
             <li>
@@ -212,5 +220,6 @@
       </header>
       <script src="{{ asset('js/script.js') }}"></script>
       @yield('user-sidebar')
+      @include('sweetalert::alert')
 </body>
 </html>

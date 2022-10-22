@@ -11,6 +11,7 @@ use App\Http\Controllers\Technician\TechnicianServiceController;
 use App\Http\Controllers\Technician\TechnicianDashboardController;
 use App\Http\Controllers\User\UserDashboardController;
 use App\Http\Controllers\User\UserFirmController;
+use App\Http\Controllers\User\UserInstantController;
 use App\Http\Controllers\User\UserServiceController;
 use App\Http\Controllers\User\UserTechnicianController;
 
@@ -86,15 +87,24 @@ Route::controller(UserDashboardController::class)->group(function(){
 
 Route::controller(UserFirmController::class)->group(function(){
     Route::get('user/firms','index');
+    Route::get('user/firms/details/{id}','firm');
+    Route::get('user/firms/services/{id}','firm_services');
 });
 
 Route::controller(UserTechnicianController::class)->group(function(){
     Route::get('user/technicians','index');
+    Route::get('user/technician/details/{id}','technician');
+    Route::get('user/technician/services/{id}','technician_services');
 });
 
 Route::controller(UserServiceController::class)->group(function(){
     Route::get('user/services','index');
     Route::get('user/services/details/{id}','create');
     Route::get('user/services/store/{id}','store');
+    Route::get('user/my-services','view');
+});
+
+Route::controller(UserInstantController::class)->group(function(){
+    Route::get('user/instant','index');
 });
 

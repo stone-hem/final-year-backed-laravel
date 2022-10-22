@@ -19,7 +19,7 @@
         @include('layouts.inc.user-nav')
         @section('user-nav')
         @endsection
-        <h2>Technicians</h2>
+        <h2>All Technicians</h2>
         <div class="card-container" style="display: flex;" >
           @foreach ($technician as $item)
           <div class="card">
@@ -34,12 +34,16 @@
                   <p>
                       {{ $item->description }}
                   </p>
+                  <div> 
+                    <a href="{{ url('user/technician/details/'.$item->id) }}"  class="tag tag-theme">more..</a>
+                    <a href="{{ url('user/technician/services/'.$item->id) }}"  class="tag tag-theme">my services..</a>
+                </div>
               </div>
           </div>
           @endforeach
       </div>
         <footer class="page-footer">
-          <span>made by someone</span>
+          <span>made by hem</span>
           
         </footer>
       </section>

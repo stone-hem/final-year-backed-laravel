@@ -21,9 +21,9 @@
         @include('layouts.inc.user-nav')
         @section('user-nav')
         @endsection
-        <h2>All Services</h2>
+        <h2>{{ $send_name }} services</h2>
         <div class="card-container" >
-            @foreach ($service as $item)
+            @foreach ($technician_services as $item)
                 <div class="card">
                     <div class="card-header">
                         <img src="{{ asset('storage/' . $item->picture) }}" class="image-style"
@@ -38,7 +38,7 @@
                             {{ $item->description }}
                         </p>
                         <div> 
-                            <a href="{{ url('user/services/details/'.$item->id) }}"  class="tag tag-theme">book..</a>
+                            <a href="{{ url('user/services/details/'.$item->id) }}"  class="tag tag-theme">order..</a>
                         </div>
                     </div>
                 </div>

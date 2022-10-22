@@ -15,22 +15,23 @@
 </head>
 
 <body>
-    @include('layouts.inc.firm-sidebar')
-    @section('firm-sidebar')
+    @include('layouts.inc.user-sidebar')
+    @section('user-sidebar')
     @endsection
     <section class="page-content">
-        @include('layouts.inc.firm-nav')
-        @section('firm-nav')
+        @include('layouts.inc.user-nav')
+        @section('user-nav')
         @endsection
+        <h2>Select a firm</h2>
         <div class="container-table">
-            <div class="arrange-items">
+            {{-- <div class="arrange-items">
                 <div class="add-another">
                     <a href="">View Pdf</a>
                 </div>
                 <div class="add-another">
-                    <a href="{{ url('firm/services/create') }}">+ Add Service</a>
+                    <a href=" ">Other Action</a>
                 </div>
-            </div>
+            </div> --}}
             <table>
                 <thead>
                     <tr>
@@ -38,28 +39,28 @@
                         <th>Service Name
                         <th>Service Description
                         <th>Display Picture
-                        <th>current rating
-                        <th>Date ordered
-                        <th>status
-                        <th>Delete
+                        <th>Firm name
+                        <th>DateTime ordered
+                        <th>Timer
+                        <th>Action
                 </thead>
                 <tbody>
-                    @foreach ($service as $item)
+                    {{-- @foreach ($cart as $item)
                     <tr>
                         <td>{{ $item->id }}
                         <td>{{  $item->name }}
                         <td>{{  $item->description }}
                         <td class="style-image"><img src="{{asset('storage/'.$item->picture)}}" class="image-style" alt="image to be uploaded">
-                        <td>{{  $item->rating }}
+                        <td>{{  $item->firm }}
                         <td>{{  $item->created_at->toDayDateTimeString() }}
-                        <td><button class="btn-primary"> <a href="{{url('edit-brand/'.$item->id)}}">edit</a></button>
-                        <td> <button class="btn-danger"> <a href="{{url('delete-brand/'.$item->id)}}">Delete</a></button>
-                    @endforeach
+                        <td>{{  $item->created_at->diffForHumans() }}
+                        <td> <button class="btn-danger"> <a href="">Remove</a></button>
+                    @endforeach --}}
                 </tbody>
             </table>
         </div>
         <footer class="page-footer">
-            <span>made by someone</span>
+            <span>made by hem</span>
 
         </footer>
     </section>
