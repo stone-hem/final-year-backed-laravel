@@ -94,5 +94,7 @@ Route::controller(UserTechnicianController::class)->group(function(){
 
 Route::controller(UserServiceController::class)->group(function(){
     Route::get('user/services','index');
+    Route::get('user/services/details/{id}','create');
+    Route::get('user/services/store/{id}','store');
 });
 

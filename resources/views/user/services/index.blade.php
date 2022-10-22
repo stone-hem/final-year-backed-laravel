@@ -38,7 +38,7 @@
                             {{ $item->description }}
                         </p>
                         <div> 
-                            <a href=""  class="tag tag-theme">book..</a>
+                            <a href="{{ url('user/services/details/'.$item->id) }}"  class="tag tag-theme">book..</a>
                         </div>
                     </div>
                 </div>
