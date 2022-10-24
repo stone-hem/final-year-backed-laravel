@@ -36,12 +36,11 @@
                 <thead>
                     <tr>
                         <th>ID
-                        <th>Service Name
-                        <th>Service Description
-                        <th>Display Picture
-                        <th>Firm name
-                        <th>DateTime ordered
-                        <th>Timer
+                        <th>firm Name
+                        <th>Firm location
+                        <th>Recomended?
+                        <th>Firm rating
+                        <th>Other details
                         <th>Action
                 </thead>
                 <tbody>

@@ -136,6 +136,14 @@
                 <span>Update my Details</span>
               </a>
             </li>
+            <li class="{{ request()->is('firm/cart*') ? 'active' : '' }}">
+              <a href="{{ url('firm/cart') }}">
+                <svg>
+                  <use xlink:href="#collection"></use>
+                </svg>
+                <span>My pending requests</span>
+              </a>
+            </li>
             <li>
               <a href="#0">
                 <svg>
@@ -144,14 +152,7 @@
                 <span>Trends</span>
               </a>
             </li>
-            <li>
-              <a href="#0">
-                <svg>
-                  <use xlink:href="#collection"></use>
-                </svg>
-                <span>My clients</span>
-              </a>
-            </li>
+           
             {{-- <li>
               <a href="#0">
                 <svg>

@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Firm\ServiceController;
 use App\Http\Controllers\Firm\FirmDetailController;
 use App\Http\Controllers\Clerk\ClerkMembersController;
+use App\Http\Controllers\Firm\FirmCartController;
 use App\Http\Controllers\Firm\FirmDashboardController;
 use App\Http\Controllers\Technician\TechnicianDetailController;
 use App\Http\Controllers\Technician\TechnicianServiceController;
@@ -15,16 +16,7 @@ use App\Http\Controllers\User\UserInstantController;
 use App\Http\Controllers\User\UserServiceController;
 use App\Http\Controllers\User\UserTechnicianController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -59,6 +51,11 @@ Route::controller(FirmDetailController::class)->group(function(){
 
 Route::controller(FirmDashboardController::class)->group(function(){
     Route::get('firm/dashboard/','index');
+});
+
+Route::controller(FirmCartController::class)->group(function(){
+    Route::get('firm/cart','index');
+    Route::get('firm/cart/done/{id}','done');
 });
 
 //technician
