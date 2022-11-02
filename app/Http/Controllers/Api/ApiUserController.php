@@ -16,7 +16,7 @@ class ApiUserController extends Controller
         try {
             $validator = Validator::make($request->all(), [
                 'name'=>'required|string|min:3',
-                'email'=>'required|email|unique:users,email|string',
+                'email'=>'required|unique:users,email|string',
                 'password'=>'required|min:8',
             ]);
     
@@ -33,7 +33,7 @@ class ApiUserController extends Controller
 
             if($user){
                 return response()->json([
-                    "success"=>"true"
+                    "success"=>true
                 ],200);
             }
             else{
@@ -56,7 +56,7 @@ class ApiUserController extends Controller
 
         try {
             $validator = Validator::make($request->all(), [
-                'email' => 'required|email|string',
+                'email' => 'required|string',
                 'password' => 'required|min:8',
             ]);
             if($validator->fails()){

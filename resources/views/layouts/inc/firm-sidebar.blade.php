@@ -9,7 +9,6 @@
     <style>
       .active{
         color:#E2B842;
-        background-color:#1d2636 ;
       }
     </style>
 </head>
