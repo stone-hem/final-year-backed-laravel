@@ -14,5 +14,5 @@ Route::post('login',[ApiUserController::class,'login']);
 Route::post('register',[ApiUserController::class,'register']);
 
 Route::controller(ApiServiceController::class)->group(function(){
-    Route::get('flutter','index');
+    Route::get('flutter/services','index');
 });

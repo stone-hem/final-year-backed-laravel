@@ -9,7 +9,19 @@ use Illuminate\Http\Request;
 class ApiServiceController extends Controller
 {
     public function index(){
-        $services=Service::all();
-        return response()->json($services);
+        $service=Service::join('users','users.id','=','services.user_id')
+        ->join('details','details.id','=','services.details_id')
+        ->select(
+            'details.name as detail_name',
+            'details.location',
+            'details.phone_number',
+            'services.id',
+            'services.name',
+            'services.description',
+            'services.rating',
+            'services.picture'
+        )
+        ->get();
+        return response()->json(["services"=>$service]);
     }
 }
