@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\ApiFirmController;
 use App\Http\Controllers\Api\ApiServiceController;
 use App\Http\Controllers\Api\ApiTechnicianController;
 use App\Http\Controllers\Api\ApiUserController;
@@ -20,4 +21,8 @@ Route::controller(ApiServiceController::class)->group(function(){
 
 Route::controller(ApiTechnicianController::class)->group(function(){
     Route::get('flutter/technicians','index');
+});
+
+Route::controller(ApiFirmController::class)->group(function(){
+    Route::get('flutter/firms','index');
 });
