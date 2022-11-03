@@ -21,7 +21,7 @@ class ApiServiceController extends Controller
             'services.rating',
             'services.picture'
         )
-        ->get();
+        ->take(2)->get();
         return response()->json(["services"=>$service]);
     }
 }
