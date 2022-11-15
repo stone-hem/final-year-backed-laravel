@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ asset('stylings/style.css') }}">
     <link rel="stylesheet" href="{{ asset('stylings/table.css') }}">
     <style type="text/css">
-       
+
     </style>
 
 </head>
@@ -45,15 +45,18 @@
                 </thead>
                 <tbody>
                     @foreach ($service as $item)
-                    <tr>
-                        <td>{{ $item->id }}
-                        <td>{{  $item->name }}
-                        <td>{{  $item->description }}
-                        <td class="style-image"><img src="{{asset('storage/'.$item->picture)}}" class="image-style" alt="image to be uploaded">
-                        <td>{{  $item->rating }}
-                        <td>{{  $item->created_at->toDayDateTimeString() }}
-                        <td><button class="btn-primary"> <a href="{{url('edit-brand/'.$item->id)}}">edit</a></button>
-                        <td> <button class="btn-danger"> <a href="{{url('delete-brand/'.$item->id)}}">Delete</a></button>
+                        <tr>
+                            <td>{{ $item->id }}
+                            <td>{{ $item->name }}
+                            <td>{{ $item->description }}
+                            <td class="style-image"><img src="{{ asset('storage/' . $item->picture) }}"
+                                    class="image-style" alt="image to be uploaded">
+                            <td>{{ $item->rating }}
+                            <td>{{ $item->created_at->toDayDateTimeString() }}
+                            <td><button class="btn-primary"> <a
+                                        href="{{ url('edit-brand/' . $item->id) }}">edit</a></button>
+                            <td> <button class="btn-danger"> <a
+                                        href="{{ url('delete-brand/' . $item->id) }}">Delete</a></button>
                     @endforeach
                 </tbody>
             </table>

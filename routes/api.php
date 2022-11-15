@@ -17,6 +17,9 @@ Route::post('register',[ApiUserController::class,'register']);
 
 Route::controller(ApiServiceController::class)->group(function(){
     Route::get('flutter/services','index');
+    Route::get('flutter/services/create/{id}','create');
+    Route::post('flutter/services/store','store');
+    Route::get('flutter/services/view','view');
 });
 
 Route::controller(ApiTechnicianController::class)->group(function(){
