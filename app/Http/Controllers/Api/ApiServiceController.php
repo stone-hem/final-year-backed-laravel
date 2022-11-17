@@ -34,6 +34,7 @@ class ApiServiceController extends Controller
             'details.name as firm',
             'details.location',
             'details.phone_number',
+            'details.description as firm_description',
             'services.id',
             'services.name',
             'services.description',
@@ -43,17 +44,23 @@ class ApiServiceController extends Controller
         ->first();
 
         return response()->json([
-            'service'=>$service
+            "service"=>$service
         ]);
     }
 
     public function store($id){
         $service=Service::find($id);
 
+        if(!$service){
+            return response()->json([
+                'message'=>"No service found"
+            ]);
+        }
+
         $cart=new Cart();
 
         $cart->name=$service->name;
-        $cart->user_id=Auth::user()->id;
+        $cart->user_id=1;
         $cart->service_id=$service->id;
         $cart->details_id=$service->details_id;
 
@@ -64,6 +71,29 @@ class ApiServiceController extends Controller
                 'message'=>"Service ordered successfully"
             ]);
         }
+        else{
+            return response()->json([
+                'error'=>"Service not ordered successfully"
+            ]);
+        }
        
+    }
+
+    public function view($id){
+        $cart=Cart::join('services','services.id','=','carts.service_id')
+        ->join('details','details.id','=','carts.details_id')
+        ->select(
+            'carts.created_at',
+            'details.name as firm',
+            'details.location',
+            'details.phone_number',
+            'services.id',
+            'services.name',
+            'services.description',
+            'services.rating',
+            'services.picture'
+        )
+        ->get();
+        return response()->json(["cart"=>$cart]);
     }
 }
