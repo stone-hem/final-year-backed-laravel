@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('stylings/style.css') }}">
-    <title>Document</title>
+    <title>Mechanic Autos</title>
     <style>
       .active{
         color:#E2B842;
-        background-color:#1d2636 ;
       }
     </style>
 </head>
@@ -141,7 +140,7 @@
                 <svg>
                   <use xlink:href="#collection"></use>
                 </svg>
-                <span>Trends</span>
+                <span>Pending services</span>
               </a>
             </li>
             <li>

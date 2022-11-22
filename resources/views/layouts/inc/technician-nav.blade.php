@@ -10,7 +10,7 @@
     <div class="admin-profile">
       <span class="greeting">Hello {{ Auth::user()->name }}</span>
       <div class="notifications">
-        <span class="badge">1</span>
+        <span class="badge">3</span>
         <svg>
           <use xlink:href="#users"></use>
         </svg>

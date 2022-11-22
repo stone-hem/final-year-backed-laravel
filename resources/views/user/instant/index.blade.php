@@ -22,39 +22,29 @@
         @include('layouts.inc.user-nav')
         @section('user-nav')
         @endsection
-        <h2>Select a firm</h2>
+        <h2>Select a firm/technician</h2>
         <div class="container-table">
-            {{-- <div class="arrange-items">
-                <div class="add-another">
-                    <a href="">View Pdf</a>
-                </div>
-                <div class="add-another">
-                    <a href=" ">Other Action</a>
-                </div>
-            </div> --}}
             <table>
                 <thead>
                     <tr>
-                        <th>ID
-                        <th>firm Name
-                        <th>Firm location
+                        <th>Name
+                        <th>Location
                         <th>Recomended?
-                        <th>Firm rating
+                        <th>Rating
                         <th>Other details
                         <th>Action
                 </thead>
                 <tbody>
-                    {{-- @foreach ($cart as $item)
+                    @foreach ($details as $item)
                     <tr>
-                        <td>{{ $item->id }}
                         <td>{{  $item->name }}
+                        <td>{{  $item->location }}
+                        <td>yes
+                        <td>{{  $item->rating }}
                         <td>{{  $item->description }}
-                        <td class="style-image"><img src="{{asset('storage/'.$item->picture)}}" class="image-style" alt="image to be uploaded">
-                        <td>{{  $item->firm }}
-                        <td>{{  $item->created_at->toDayDateTimeString() }}
-                        <td>{{  $item->created_at->diffForHumans() }}
-                        <td> <button class="btn-danger"> <a href="">Remove</a></button>
-                    @endforeach --}}
+                        {{-- <td class="style-image"><img src="{{asset('storage/'.$item->picture)}}" class="image-style" alt="image to be uploaded"> --}}
+                        <td> <button class="btn-primary"> <a href="{{ url('user/instant/description/'.$item->id) }}">Request Help</a></button>
+                    @endforeach
                 </tbody>
             </table>
         </div>

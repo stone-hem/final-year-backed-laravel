@@ -115,5 +115,6 @@ Route::controller(UserServiceController::class)->group(function(){
 
 Route::controller(UserInstantController::class)->group(function(){
     Route::get('user/instant','index');
+    Route::get('user/instant/description/{id}','description');
 });
 

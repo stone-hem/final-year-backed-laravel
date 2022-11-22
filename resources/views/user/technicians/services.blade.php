@@ -37,9 +37,12 @@
                         <p>
                             {{ $item->description }}
                         </p>
-                        <div> 
-                            <a href="{{ url('user/services/details/'.$item->id) }}"  class="tag tag-theme">order..</a>
+                      
+                        <div class="links">
+                            <button class="follow"><a
+                                    href="{{ url('user/services/details/'.$item->id) }}">Order..</a></button>
                         </div>
+                        
                     </div>
                 </div>
             @endforeach

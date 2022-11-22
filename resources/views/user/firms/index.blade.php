@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ asset('stylings/style.css') }}">
     <link rel="stylesheet" href="{{ asset('stylings/card.css') }}">
     <style>
-
+       
     </style>
 </head>
 
@@ -22,32 +22,36 @@
         @section('user-nav')
         @endsection
         <h2>All Firms</h2>
-        <div class="card-container" style="display: flex;" >
+        <div class="card-container" style="display: flex;">
             @foreach ($firm as $item)
-            <div class="card">
-                <div class="card-header">
-                    <img src="{{asset('storage/'.$item->org_pic)}}" class="image-style" alt="image to be uploaded">
-                </div>              
-                <div class="card-body">
-                    <span class="tag tag-teal">{{ $item->phone_number }}</span>
-                    <h4>
-                        {{ $item->name }}
-                    </h4>
-                    <p>
-                        {{ $item->description }}
-                    </p>
-                    <div> 
-                        <a href="{{ url('user/firms/details/'.$item->id) }}"  class="tag tag-theme">more..</a>
-                        <a href="{{ url('user/firms/services/'.$item->id) }}"  class="tag tag-theme">our services..</a>
+                <div class="card">
+                    <div class="card-header">
+                        <img src="{{ asset('storage/' . $item->org_pic) }}" class="image-style"
+                            alt="image to be uploaded">
+                    </div>
+                    <div class="card-body">
+                        <span class="tag tag-teal">{{ $item->phone_number }}</span>
+                        <h4>
+                            {{ $item->name }}
+                        </h4>
+                        <p>
+                            {{ $item->description }}
+                        </p>
+                        <div class="links">
+                            <button class="follow"><a
+                                    href="{{ url('user/firms/details/' . $item->id) }}">More..</a></button>
+                            <button class="view"><a href="{{ url('user/firms/services/' . $item->id) }}">our
+                                        services..</a></button>
+                            
+                        </div>
                     </div>
                 </div>
-            </div>
             @endforeach
         </div>
-            <footer class="page-footer">
-                <span>made by hem</span>
+        <footer class="page-footer">
+            <span>made by hem</span>
 
-            </footer>
+        </footer>
     </section>
     <script src="{{ asset('js/script.js') }}"></script>
 </body>
