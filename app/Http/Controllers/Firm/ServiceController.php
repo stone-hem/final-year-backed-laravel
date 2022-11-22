@@ -20,6 +20,7 @@ class ServiceController extends Controller
     public function store(Request $request){
         $validated=$request->validate([
             'service_name'=>'required|string|max:50',
+            'service_value'=>'required|numeric',
             'service_image'=>'required|mimes:png,jpg,jpeg',
             'description'=>'required|string|max:255'
         ]);
@@ -33,12 +34,13 @@ class ServiceController extends Controller
         $image_path = $request->file('service_image')->store('service', 'public');
         $service->picture=$image_path;
         $service->name=$request->input('service_name');
+        $service->value=$request->input('service_value');
         $service->description=$request->input('description');
         $service->user_id=Auth::user()->id;
         $service->details_id=$detail->id;
 
         if($service->save()){
-            return back()->with("message","New service has been added successfully");
+            return back()->with("message","$request->service_name has been added successfully");
         }
     }
 }

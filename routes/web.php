@@ -39,8 +39,9 @@ Route::controller(ServiceController::class)->group(function(){
     Route::get('firm/services','index');
     Route::get('firm/services/create','create');
     Route::post('firm/services/store','store');
-    Route::get('firm/services/edit','edit');
-    Route::post('firm/services/update','update');
+    Route::get('firm/services/edit{id}','edit');
+    Route::post('firm/services/update/{id}','update');
+    Route::get('firm/services/delete/{id}');
 });
 
 Route::controller(FirmDetailController::class)->group(function(){

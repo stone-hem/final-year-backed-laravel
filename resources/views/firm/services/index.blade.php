@@ -44,20 +44,25 @@
                         <th>Delete
                 </thead>
                 <tbody>
+                    @if (count($service)==0)
+                    <tr>
+                        <td colspan="7"> <h4>Ooops! You have no services yet!</h4>
+                    @else
                     @foreach ($service as $item)
-                        <tr>
-                            <td>{{ $item->id }}
-                            <td>{{ $item->name }}
-                            <td>{{ $item->description }}
-                            <td class="style-image"><img src="{{ asset('storage/' . $item->picture) }}"
-                                    class="image-style" alt="image to be uploaded">
-                            <td>{{ $item->rating }}
-                            <td>{{ $item->created_at->toDayDateTimeString() }}
-                            <td><button class="btn-primary"> <a
-                                        href="{{ url('edit-brand/' . $item->id) }}">edit</a></button>
-                            <td> <button class="btn-danger"> <a
-                                        href="{{ url('delete-brand/' . $item->id) }}">Delete</a></button>
-                    @endforeach
+                    <tr>
+                        <td>{{ $item->id }}
+                        <td>{{ $item->name }}
+                        <td>{{ $item->description }}
+                        <td class="style-image"><img src="{{ asset('storage/' . $item->picture) }}"
+                                class="image-style" alt="image to be uploaded">
+                        <td>{{ $item->rating }}
+                        <td>{{ $item->created_at->toDayDateTimeString() }}
+                        <td><button class="btn-primary"> <a
+                                    href="{{ url('edit-brand/' . $item->id) }}">edit</a></button>
+                        <td> <button class="btn-danger"> <a
+                                    href="{{ url('delete-brand/' . $item->id) }}">Delete</a></button>
+                @endforeach
+                    @endif
                 </tbody>
             </table>
         </div>

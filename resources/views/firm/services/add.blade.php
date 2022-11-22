@@ -36,6 +36,12 @@
                 @error('service_name')
                     <div class="errors-here">{{ $message }}</div>
                 @enderror
+                <label for="field1"><span>Service Value in Kshs<span class="required">*</span></span>
+                    <input type="number" class="input-field" name="service_value" value="{{ old('service_value') }}" />
+                </label>
+                @error('service_name')
+                    <div class="errors-here">{{ $message }}</div>
+                @enderror
                 <label for="field2"><span>Service Image<span class="required">*</span></span>
                     <input type="file" class="input-field" name="service_image"  value="{{ old('service_image') }}"/>
                 </label>
