@@ -1,22 +1,20 @@
 <?php
 
-namespace App\Http\Controllers\Firm;
+namespace App\Http\Controllers\Technician;
 
 use App\Http\Controllers\Controller;
 use App\Models\Cart;
 use App\Models\Detail;
-use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class FirmCartController extends Controller
+class TechnicianCartController extends Controller
 {
     public function index(){
         $detail=Detail::join('users','users.id','=','details.user_id')
         ->where('details.user_id',Auth::user()->id)
         ->select('details.id')
         ->first();
-       
 
         $cart=Cart::join('users','users.id','=','carts.user_id')
         ->join('details','details.id','=','carts.details_id')
@@ -38,7 +36,7 @@ class FirmCartController extends Controller
         )
         ->get();
 
-        return view('firm.cart.index',compact('cart'));
+        return view('technician.cart.index',compact('cart'));
     }
 
     public function pending($id){

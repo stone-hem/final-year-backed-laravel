@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ asset('stylings/style.css') }}">
     <link rel="stylesheet" href="{{ asset('stylings/forms.css') }}">
     <style>
-       
+
     </style>
 </head>
 
@@ -23,6 +23,11 @@
         @endsection
         <div class="form-style-2">
             <div class="form-style-2-heading">Provide service information</div>
+            @if (session()->has('info'))
+                <div class="errors-here">
+                    {{ session()->get('info') }}
+                </div>
+            @endif
             <form action="{{ url('firm/services/store') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <label for="field1"><span>Service Name<span class="required">*</span></span>
@@ -34,17 +39,17 @@
                 <label for="field1"><span>Service Value in Kshs<span class="required">*</span></span>
                     <input type="number" class="input-field" name="service_value" value="{{ old('service_value') }}" />
                 </label>
-                @error('service_name')
+                @error('service_value')
                     <div class="errors-here">{{ $message }}</div>
                 @enderror
                 <label for="field2"><span>Service Image<span class="required">*</span></span>
-                    <input type="file" class="input-field" name="service_image"  value="{{ old('service_image') }}"/>
+                    <input type="file" class="input-field" name="service_image" value="{{ old('service_image') }}" />
                 </label>
                 @error('service_image')
                     <div class="errors-here">{{ $message }}</div>
                 @enderror
                 <label for="field5"><span>Description<span class="required">*</span></span>
-                    <textarea name="description" class="textarea-field" >{{ old('description') }}</textarea>
+                    <textarea name="description" class="textarea-field">{{ old('description') }}</textarea>
                 </label>
                 @error('description')
                     <div class="errors-here">{{ $message }}</div>

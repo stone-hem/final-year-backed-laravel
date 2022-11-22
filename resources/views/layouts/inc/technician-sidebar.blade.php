@@ -136,8 +136,8 @@
                 <span>Services</span>
               </a>
             </li>
-            <li>
-              <a href="#0">
+            <li class="{{ request()->is('technician/cart*') ? 'active' : '' }}">
+              <a href="{{ url('technician/cart') }}">
                 <svg>
                   <use xlink:href="#collection"></use>
                 </svg>

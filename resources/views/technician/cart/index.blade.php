@@ -15,12 +15,12 @@
 </head>
 
 <body>
-    @include('layouts.inc.firm-sidebar')
-    @section('firm-sidebar')
+    @include('layouts.inc.technician-sidebar')
+    @section('technician-sidebar')
     @endsection
     <section class="page-content">
-        @include('layouts.inc.firm-nav')
-        @section('firm-nav')
+        @include('layouts.inc.technician-nav')
+        @section('technician-nav')
         @endsection
         <div style="display: flex; align-items:center; justify-content:center;">
         <ol class="list">
@@ -46,7 +46,7 @@
                         female
                     @endif</li>
                 </ol>
-                <a href="{{ url('firm/cart/pending/'.$item->id) }}" class="accept-service">Pending</a>
+                <a href="{{ url('technician/cart/pending'.$item->id) }}" class="accept-service">Pending</a>
             </li>
             @endforeach
             @endif

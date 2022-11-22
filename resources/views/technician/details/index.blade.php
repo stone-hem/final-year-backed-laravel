@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mechanic autos</title>
     <link rel="stylesheet" href="{{ asset('stylings/style.css') }}">
     <link rel="stylesheet" href="{{ asset('stylings/profile.css') }}">
     <style>
@@ -69,14 +69,14 @@
                         </li>
                     </ul>
                     <div class="links">
-                        <button class="follow"><a href="{{ url('firm/details/create/') }}">Update Details</a></button>
+                        <button class="follow"><a href="{{ url('technician/details/edit/') }}">Update Details</a></button>
                         {{-- <button class="view">View profile</button> --}}
                     </div>
                 </div>
             </div>
         @endif
         <footer class="page-footer">
-            <span>made by someone</span>
+            <span>made by Hem</span>
         </footer>
     </section>
     <script src="{{ asset('js/script.js') }}"></script>

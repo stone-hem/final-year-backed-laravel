@@ -28,7 +28,7 @@
                     Services Alive
                 </h2>
                 <p class='dashboard-card__detail'>
-                    EOMNet30
+                    {{ number_format($sum_services) }}
                 </p>
             </div>
 
@@ -37,7 +37,7 @@
                     Clients Handled
                 </h2>
                 <p class='dashboard-card__detail'>
-                    $450,000.00
+                    {{ number_format($sum_cart) }}
                 </p>
             </div>
 
@@ -46,7 +46,7 @@
                     Earnings
                 </h2>
                 <p class='dashboard-card__detail'>
-                    $20,000.00
+                    20,000.00
                 </p>
             </div>
 
@@ -55,9 +55,9 @@
                     Succesfull books
                 </h2>
                 <p class='dashboard-card__detail'>
-                    Test Account
+                    {{ number_format($sum_books) }}
                 </p>
-                <p class='dashboard-card__cta'><a href='#'>Remove</a></p>
+                <p class='dashboard-card__cta'><a href='#'>View</a></p>
             </div>
 
             <div class='dashboard-card'>
@@ -86,47 +86,14 @@
             <div class='dashboard-card dashboard-card--form'>
                 <div class='dashboard-card__header'>
                     <h2 class='dashboard-card__title'>
-                        Add a Team Member
+                        Summary
                     </h2>
                     <p class='dashboard-card__detail'>
                         [icon]
                     </p>
                 </div>
                 <div class='dashboard-card__body'>
-                    <form>
-                        <fieldset>
-                            <legend>Member Role <span>(check all that apply)</span></legend>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" checked>
-                                    <span class="label__text">Buyer</span>
-                                    <span class="label__text--help">Buyers can make purchases and charge it to this
-                                        account.</span>
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox">
-                                    <span class="label__text">Payer</span>
-                                    <span class="label__text--help">In addition to the above, Payers can also pay down
-                                        the account balance.</span>
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox">
-                                    <span class="label__text">Admin</span>
-                                    <span class="label__text--help">In addition to the above, Admins can also edit team
-                                        members.</span>
-                                </label>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1">
-                                <button class='button--inline' type='button'>Add Member</button>
-                            </div>
-                        </fieldset>
-                    </form>
+                   
                 </div>
             </div>
 

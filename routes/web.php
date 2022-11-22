@@ -7,6 +7,7 @@ use App\Http\Controllers\Firm\FirmDetailController;
 use App\Http\Controllers\Clerk\ClerkMembersController;
 use App\Http\Controllers\Firm\FirmCartController;
 use App\Http\Controllers\Firm\FirmDashboardController;
+use App\Http\Controllers\Technician\TechnicianCartController;
 use App\Http\Controllers\Technician\TechnicianDetailController;
 use App\Http\Controllers\Technician\TechnicianServiceController;
 use App\Http\Controllers\Technician\TechnicianDashboardController;
@@ -58,7 +59,7 @@ Route::controller(FirmDashboardController::class)->group(function(){
 
 Route::controller(FirmCartController::class)->group(function(){
     Route::get('firm/cart','index');
-    Route::get('firm/cart/done/{id}','done');
+    Route::get('firm/cart/pending/{id}','pending');
 });
 
 //technician
@@ -70,8 +71,9 @@ Route::controller(TechnicianServiceController::class)->group(function(){
     Route::get('technician/services','index');
     Route::get('technician/services/create','create');
     Route::post('technician/services/store','store');
-    Route::get('technician/services/edit','edit');
-    Route::post('technician/services/update','update');
+    Route::get('technician/services/edit/{id}','edit');
+    Route::post('technician/services/update/{id}','update');
+    Route::get('technician/services/delete/{id}','destroy');
 });
 
 Route::controller(TechnicianDetailController::class)->group(function(){
@@ -80,6 +82,11 @@ Route::controller(TechnicianDetailController::class)->group(function(){
     Route::post('technician/details/store','store');
     Route::get('technician/details/edit','edit');
     Route::post('technician/details/update','update');
+});
+
+Route::controller(TechnicianCartController::class)->group(function(){
+    Route::get('technician/cart','index');
+    Route::get('technician/cart/pending/{id}','done');
 });
 
 //user

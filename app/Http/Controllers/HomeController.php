@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
+use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,10 +19,29 @@ class HomeController extends Controller
             return view('admin.dashboard');
         }
         elseif ($role=='1') {
-            return view('firm.dashboard');
+            $sum_services=Service::where('user_id',Auth::user()->id)->count();
+            $sum_cart=Cart::where('user_id',Auth::user()->id)->where('is_complete',1)->count();
+            $sum_books=Cart::where('user_id',Auth::user()->id)->count();
+            return view('firm.dashboard',
+            compact(
+                'sum_services',
+                'sum_cart',
+                'sum_books'
+            ));
         }
         elseif ($role=='2') {
-            return view('technician.dashboard');
+
+            $sum_services=Service::where('user_id',Auth::user()->id)->count();
+            $sum_cart=Cart::where('user_id',Auth::user()->id)->where('is_complete',1)->count();
+            $sum_books=Cart::where('user_id',Auth::user()->id)->count();
+            return view('technician.dashboard',
+            compact(
+                'sum_services',
+                'sum_cart',
+                'sum_books'
+            )
+        );
+        
         }
         elseif ($role=='3') {
             return view('user.dashboard');

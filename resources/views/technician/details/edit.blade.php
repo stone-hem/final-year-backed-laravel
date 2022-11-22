@@ -14,15 +14,15 @@
 </head>
 
 <body>
-    @include('layouts.inc.firm-sidebar')
-    @section('firm-sidebar')
+    @include('layouts.inc.technician-sidebar')
+    @section('technician-sidebar')
     @endsection
     <section class="page-content">
-        @include('layouts.inc.firm-nav')
-        @section('firm-nav')
+        @include('layouts.inc.technician-nav')
+        @section('technician-nav')
         @endsection
         <div class="form-style-2">
-            <div class="form-style-2-heading">Edit Firm Profile information</div>
+            <div class="form-style-2-heading">Edit My Profile information</div>
             <form action="{{ url('firm/details/update') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <label for="field1"><span>Firm Name<span class="required">*</span></span>

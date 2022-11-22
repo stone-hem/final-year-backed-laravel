@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mechanic autos</title>
     <link rel="stylesheet" href="{{ asset('stylings/style.css') }}">
     <link rel="stylesheet" href="{{ asset('stylings/forms.css') }}">
     <style>
@@ -23,9 +23,9 @@
         @endsection
         <div class="form-style-2">
             <div class="form-style-2-heading">Provide service information</div>
-            @if (session()->has('message'))
-                <div class="success-here">
-                    {{ session()->get('message') }}
+            @if (session()->has('info'))
+                <div class="errors-here">
+                    {{ session()->get('info') }}
                 </div>
             @endif
             <form action="{{ url('technician/services/store') }}" method="post" enctype="multipart/form-data">
@@ -34,6 +34,12 @@
                     <input type="text" class="input-field" name="service_name" value="{{ old('service_name') }}" />
                 </label>
                 @error('service_name')
+                    <div class="errors-here">{{ $message }}</div>
+                @enderror
+                <label for="field1"><span>Service Value in Kshs<span class="required">*</span></span>
+                    <input type="number" class="input-field" name="service_value" value="{{ old('service_value') }}" />
+                </label>
+                @error('service_value')
                     <div class="errors-here">{{ $message }}</div>
                 @enderror
                 <label for="field2"><span>Service Image<span class="required">*</span></span>
@@ -50,11 +56,18 @@
                 @enderror
                 <label><span> </span>
                     <input type="submit" value="Submit" />
+                    <span>
+                        @if (session()->has('message'))
+                            <div class="success-here">
+                                {{ session()->get('message') }}
+                            </div>
+                        @endif
+                    </span>
                 </label>
             </form>
         </div>
         <footer class="page-footer">
-            <span>made by someone</span>
+            <span>made by Hem</span>
         </footer>
     </section>
     <script src="{{ asset('js/script.js') }}"></script>

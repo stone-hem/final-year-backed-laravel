@@ -14,12 +14,12 @@
 </head>
 
 <body>
-    @include('layouts.inc.firm-sidebar')
-    @section('firm-sidebar')
+    @include('layouts.inc.technician-sidebar')
+    @section('technician-sidebar')
     @endsection
     <section class="page-content">
-        @include('layouts.inc.firm-nav')
-        @section('firm-nav')
+        @include('layouts.inc.technician-nav')
+        @section('technician-nav')
         @endsection
         <div class="form-style-2">
             <div class="form-style-2-heading">Edit {{ $service->name }} information</div>
@@ -62,7 +62,7 @@
             </form>
         </div>
         <footer class="page-footer">
-            <span>made by someone</span>
+            <span>made by Hem</span>
         </footer>
     </section>
     <script src="{{ asset('js/script.js') }}"></script>

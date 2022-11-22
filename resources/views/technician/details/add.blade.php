@@ -31,32 +31,32 @@
             <form action="{{ url('technician/details/store') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <label for="field1"><span>Technician Name<span class="required">*</span></span>
-                    <input type="text" class="input-field" name="technician_name" placeholder="name" value="{{ old('technician_name', $details->name??" ") }}" />
+                    <input type="text" class="input-field" name="technician_name" placeholder="name" value="{{ old('technician_name') }}" />
                 </label>
                 @error('technician_name')
                     <div class="errors-here">{{ $message }}</div>
                 @enderror
                 <label for="field1"><span>Firm Kra Pin<span class="required">*</span></span>
-                    <input type="text" class="input-field" name="technician_kra" value="{{ old('technician_kra', $details->kra_pin??"") }}" placeholder="kra.."/>
+                    <input type="text" class="input-field" name="technician_kra" value="{{ old('technician_kra') }}" placeholder="kra.."/>
                 </label>
                 @error('technician_kra')
                     <div class="errors-here">{{ $message }}</div>
                 @enderror
                 <label for="technician_contact"><span>Firm Contact<span class="required">*</span></span>
-                    <input type="text" class="input-field" name="technician_contact" value="{{ old('technician_contact', $details->phone_number??"") }}" placeholder="phone.." />
+                    <input type="text" class="input-field" name="technician_contact" value="{{ old('technician_contact') }}" placeholder="phone.." />
                 </label>
                 @error('technician_contact')
                     <div class="errors-here">{{ $message }}</div>
                 @enderror
                 <label for="field2"><span>Firm Image<span class="required">*</span></span>
-                    <input type="file" class="input-field" name="technician_image"  value="{{ old('technician_image', $details->org_pic??"") }}"/>
+                    <input type="file" class="input-field" name="technician_image"  value="{{ old('technician_image') }}"/>
                 </label>
                 @error('technician_image')
                     <div class="errors-here">{{ $message }}</div>
                 @enderror
                 <label for="field5"><span>Description<span class="required">*</span></span>
                     <textarea name="description" class="textarea-field" placeholder="descritpion.." >
-                        {{ old('description', $details->description??"") }}
+                        {{ old('description') }}
                     </textarea>
                 </label>
                 @error('description')
@@ -68,7 +68,7 @@
             </form>
         </div>
         <footer class="page-footer">
-            <span>made by someone</span>
+            <span>made by Hem</span>
         </footer>
     </section>
     <script src="{{ asset('js/script.js') }}"></script>

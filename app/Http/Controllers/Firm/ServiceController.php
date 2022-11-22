@@ -28,7 +28,7 @@ class ServiceController extends Controller
         ]);
         $detail=Detail::where('user_id',Auth::user()->id)->first();
         if(!$detail){
-            return back()->with("message","Kindly make sure you fully update your details to create services");
+            return back()->with("info","Kindly make sure you fully update your details to create services");
         }
 
         $service=new Service();

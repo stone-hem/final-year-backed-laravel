@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mechanic autos</title>
     <link rel="stylesheet" href="{{ asset('stylings/style.css') }}">
     <link rel="stylesheet" href="{{ asset('stylings/dashboard.css') }}">
 </head>
@@ -22,7 +22,7 @@
                   Services Alive
               </h2>
               <p class='dashboard-card__detail'>
-                  EOMNet30
+                  {{ number_format($sum_services) }}
               </p>
           </div>
 
@@ -31,7 +31,7 @@
                   Clients Handled
               </h2>
               <p class='dashboard-card__detail'>
-                  $450,000.00
+                  {{ number_format($sum_cart) }}
               </p>
           </div>
 
@@ -40,7 +40,7 @@
                   Earnings
               </h2>
               <p class='dashboard-card__detail'>
-                  $20,000.00
+                  20,000.00
               </p>
           </div>
 
@@ -49,9 +49,9 @@
                   Succesfull books
               </h2>
               <p class='dashboard-card__detail'>
-                  Test Account
+                  {{ number_format($sum_books) }}
               </p>
-              <p class='dashboard-card__cta'><a href='#'>Remove</a></p>
+              <p class='dashboard-card__cta'><a href='#'>View</a></p>
           </div>
 
           <div class='dashboard-card'>
@@ -80,14 +80,14 @@
           <div class='dashboard-card dashboard-card--form'>
               <div class='dashboard-card__header'>
                   <h2 class='dashboard-card__title'>
-                      Add a Team Member
+                      Summary
                   </h2>
                   <p class='dashboard-card__detail'>
                       [icon]
                   </p>
               </div>
               <div class='dashboard-card__body'>
-                  <form>
+                  {{-- <form>
                       <fieldset>
                           <legend>Member Role <span>(check all that apply)</span></legend>
                           <div class="checkbox">
@@ -120,13 +120,13 @@
                               <button class='button--inline' type='button'>Add Member</button>
                           </div>
                       </fieldset>
-                  </form>
+                  </form> --}}
               </div>
           </div>
 
       </div>
         <footer class="page-footer">
-          <span>made by someone</span>
+          <span>made by Hem</span>
           
         </footer>
       </section>
