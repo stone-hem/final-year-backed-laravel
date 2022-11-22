@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>mechanic autos</title>
     <link rel="stylesheet" href="{{ asset('stylings/style.css') }}">
     <link rel="stylesheet" href="{{ asset('stylings/table.css') }}">
     <style type="text/css">
@@ -34,8 +34,8 @@
             <table>
                 <thead>
                     <tr>
-                        <th>ID
                         <th>Service Name
+                        <th>Service Value
                         <th>Service Description
                         <th>Display Picture
                         <th>current rating
@@ -50,17 +50,17 @@
                     @else
                     @foreach ($service as $item)
                     <tr>
-                        <td>{{ $item->id }}
                         <td>{{ $item->name }}
+                            <td>{{ number_format($item->value) }}
                         <td>{{ $item->description }}
                         <td class="style-image"><img src="{{ asset('storage/' . $item->picture) }}"
                                 class="image-style" alt="image to be uploaded">
                         <td>{{ $item->rating }}
                         <td>{{ $item->created_at->toDayDateTimeString() }}
                         <td><button class="btn-primary"> <a
-                                    href="{{ url('edit-brand/' . $item->id) }}">edit</a></button>
+                                    href="{{ url('firm/services/edit' . $item->id) }}">edit</a></button>
                         <td> <button class="btn-danger"> <a
-                                    href="{{ url('delete-brand/' . $item->id) }}">Delete</a></button>
+                                    href="{{ url('firm/services/delete/' . $item->id) }}">Delete</a></button>
                 @endforeach
                     @endif
                 </tbody>

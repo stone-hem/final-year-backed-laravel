@@ -22,36 +22,40 @@
         @section('firm-nav')
         @endsection
         <div class="form-style-2">
-            <div class="form-style-2-heading">Provide Details information</div>
-            <form action="{{ url('firm/details/store') }}" method="post" enctype="multipart/form-data">
+            <div class="form-style-2-heading">Edit My Profile information</div>
+            <form action="{{ url('firm/details/update') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <label for="field1"><span>Firm Name<span class="required">*</span></span>
-                    <input type="text" class="input-field" name="firm_name" value="{{ old('firm_name') }}" />
+                    <input type="text" class="input-field" name="firm_name"
+                        value="{{ old('firm_name', $check_detail->name ?? ' ') }}" />
                 </label>
                 @error('firm_name')
                     <div class="errors-here">{{ $message }}</div>
                 @enderror
                 <label for="field1"><span>Firm Kra Pin<span class="required">*</span></span>
-                    <input type="text" class="input-field" name="firm_kra" value="{{ old('firm_kra') }}" />
+                    <input type="text" class="input-field" name="firm_kra"
+                        value="{{ old('firm_kra', $check_detail->kra_pin ?? ' ') }}" />
                 </label>
                 @error('firm_kra')
                     <div class="errors-here">{{ $message }}</div>
                 @enderror
                 <label for="firm_contact"><span>Firm Contact<span class="required">*</span></span>
-                    <input type="text" class="input-field" name="firm_contact" value="{{ old('firm_contact') }}" />
+                    <input type="text" class="input-field" name="firm_contact"
+                        value="{{ old('firm_contact', $check_detail->phone_number ?? ' ') }}" />
                 </label>
                 @error('firm_contact')
                     <div class="errors-here">{{ $message }}</div>
                 @enderror
                 <label for="field2"><span>Firm Image<span class="required">*</span></span>
-                    <input type="file" class="input-field" name="firm_image"  value="{{ old('firm_image') }}"/>
+                    <input type="file" class="input-field" name="firm_image"
+                        value="{{ old('firm_image', $check_detail->org_pic ?? ' ') }}" />
                 </label>
                 @error('firm_image')
                     <div class="errors-here">{{ $message }}</div>
                 @enderror
                 <label for="field5"><span>Description<span class="required">*</span></span>
-                    <textarea name="description" class="textarea-field" >
-                        {{ old('description') }}
+                    <textarea name="description" class="textarea-field">
+                        {{ old('description', $check_detail->description ?? ' ') }}
                     </textarea>
                 </label>
                 @error('description')

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ asset('stylings/style.css') }}">
     <link rel="stylesheet" href="{{ asset('stylings/forms.css') }}">
     <style>
-
+       
     </style>
 </head>
 
@@ -22,37 +22,29 @@
         @section('firm-nav')
         @endsection
         <div class="form-style-2">
-            <div class="form-style-2-heading">Provide Details information</div>
-            <form action="{{ url('firm/details/store') }}" method="post" enctype="multipart/form-data">
+            <div class="form-style-2-heading">Edit {{ $service->name }} information</div>
+            <form action="{{ url('firm/services/update/'.$service->id ) }}" method="post" enctype="multipart/form-data">
                 @csrf
-                <label for="field1"><span>Firm Name<span class="required">*</span></span>
-                    <input type="text" class="input-field" name="firm_name" value="{{ old('firm_name') }}" />
+                <label for="field1"><span>Service Name<span class="required">*</span></span>
+                    <input type="text" class="input-field" name="service_name" value="{{ old('service_name',$service->name ) }}" />
                 </label>
-                @error('firm_name')
+                @error('service_name')
                     <div class="errors-here">{{ $message }}</div>
                 @enderror
-                <label for="field1"><span>Firm Kra Pin<span class="required">*</span></span>
-                    <input type="text" class="input-field" name="firm_kra" value="{{ old('firm_kra') }}" />
+                <label for="field1"><span>Service Value in Kshs<span class="required">*</span></span>
+                    <input type="number" class="input-field" name="service_value" value="{{ old('service_value', $service->value ) }}" />
                 </label>
-                @error('firm_kra')
+                @error('service_name')
                     <div class="errors-here">{{ $message }}</div>
                 @enderror
-                <label for="firm_contact"><span>Firm Contact<span class="required">*</span></span>
-                    <input type="text" class="input-field" name="firm_contact" value="{{ old('firm_contact') }}" />
+                <label for="field2"><span>Service Image<span class="required">*</span></span>
+                    <input type="file" class="input-field" name="service_image"  value="{{ old('service_image') }}"/>
                 </label>
-                @error('firm_contact')
-                    <div class="errors-here">{{ $message }}</div>
-                @enderror
-                <label for="field2"><span>Firm Image<span class="required">*</span></span>
-                    <input type="file" class="input-field" name="firm_image"  value="{{ old('firm_image') }}"/>
-                </label>
-                @error('firm_image')
+                @error('service_image')
                     <div class="errors-here">{{ $message }}</div>
                 @enderror
                 <label for="field5"><span>Description<span class="required">*</span></span>
-                    <textarea name="description" class="textarea-field" >
-                        {{ old('description') }}
-                    </textarea>
+                    <textarea name="description" class="textarea-field" >{{ old('description',$service->description ) }}</textarea>
                 </label>
                 @error('description')
                     <div class="errors-here">{{ $message }}</div>

@@ -56,7 +56,7 @@
                         </li>
                     </ul>
                     <div class="links">
-                        <button class="follow"><a href="{{ url('firm/details/create/') }}">Update Details</a></button>
+                        <button class="follow"><a href="{{ url('firm/details/edit/') }}">Update Details</a></button>
                         {{-- <button class="view">View profile</button> --}}
                     </div>
                 </div>

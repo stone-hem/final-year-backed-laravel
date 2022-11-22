@@ -23,11 +23,6 @@
         @endsection
         <div class="form-style-2">
             <div class="form-style-2-heading">Provide service information</div>
-            @if (session()->has('message'))
-                <div class="success-here">
-                    {{ session()->get('message') }}
-                </div>
-            @endif
             <form action="{{ url('firm/services/store') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <label for="field1"><span>Service Name<span class="required">*</span></span>
@@ -56,6 +51,13 @@
                 @enderror
                 <label><span> </span>
                     <input type="submit" value="Submit" />
+                    <span>
+                        @if (session()->has('message'))
+                            <div class="success-here">
+                                {{ session()->get('message') }}
+                            </div>
+                        @endif
+                    </span>
                 </label>
             </form>
         </div>

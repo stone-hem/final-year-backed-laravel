@@ -41,13 +41,15 @@ Route::controller(ServiceController::class)->group(function(){
     Route::post('firm/services/store','store');
     Route::get('firm/services/edit{id}','edit');
     Route::post('firm/services/update/{id}','update');
-    Route::get('firm/services/delete/{id}');
+    Route::get('firm/services/delete/{id}','destroy');
 });
 
 Route::controller(FirmDetailController::class)->group(function(){
     Route::get('firm/details/','index');
     Route::get('firm/details/create','create');
     Route::post('firm/details/store','store');
+    Route::get('firm/details/edit','edit');
+    Route::post('firm/details/update','update');
 });
 
 Route::controller(FirmDashboardController::class)->group(function(){
@@ -76,6 +78,8 @@ Route::controller(TechnicianDetailController::class)->group(function(){
     Route::get('technician/details/','index');
     Route::get('technician/details/create','create');
     Route::post('technician/details/store','store');
+    Route::get('technician/details/edit','edit');
+    Route::post('technician/details/update','update');
 });
 
 //user
