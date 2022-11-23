@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('stylings/style.css') }}">
-    <title>Document</title>
+    <title>mechanic autos</title>
+    <style>
+      .active{
+        color:#E2B842;
+      }
+    </style>
 </head>
 <body>
     <svg style="display:none;">
@@ -107,15 +112,15 @@
               <h3>Admin</h3>
             </li>
             <li>
-              <a href="#0">
+              <a href="{{ url('admin/home') }}" class="{{ request()->is('admin/home')?'active':'' }}">
                 <svg>
                   <use xlink:href="#pages"></use>
                 </svg>
-                <span>Firms</span>
+                <span>Home</span>
               </a>
             </li>
             <li>
-              <a href="#0">
+              <a href="{{ url('admin/technicians') }}" class="{{ request()->is('admin/tecnicians*')?'active':'' }}">
                 <svg>
                   <use xlink:href="#users"></use>
                 </svg>
@@ -123,19 +128,19 @@
               </a>
             </li>
             <li>
-              <a href="#0">
+              <a href="{{ url('admin/firms') }}" class="{{ request()->is('admin/firms*')?'active':'' }}">
                 <svg>
                   <use xlink:href="#trends"></use>
                 </svg>
-                <span>Users</span>
+                <span>Firms</span>
               </a>
             </li>
             <li>
-              <a href="#0">
+              <a href="{{ url('admin/users') }}" class="{{ request()->is('admin/users*')?'active':'' }}">
                 <svg>
                   <use xlink:href="#collection"></use>
                 </svg>
-                <span>Trends</span>
+                <span>Users</span>
               </a>
             </li>
             <li>

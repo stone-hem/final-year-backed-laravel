@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Http\Controllers\Admin\AdminFirmController;
+use App\Http\Controllers\Admin\AdminTechnicianController;
+use App\Http\Controllers\Admin\AdminUserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Firm\ServiceController;
@@ -118,3 +122,21 @@ Route::controller(UserInstantController::class)->group(function(){
     Route::get('user/instant/description/{id}','description');
 });
 
+
+//firm
+
+Route::controller(AdminDashboardController::class)->group(function(){
+    Route::get('admin/home','index');
+});
+
+Route::controller(AdminFirmController::class)->group(function(){
+    Route::get('admin/firms','index');
+});
+
+Route::controller(AdminTechnicianController::class)->group(function(){
+    Route::get('admin/technicians','index');
+});
+
+Route::controller(AdminUserController::class)->group(function(){
+    Route::get('admin/users','index');
+});

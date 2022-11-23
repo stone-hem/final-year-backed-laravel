@@ -7,6 +7,7 @@ use App\Models\Cart;
 use App\Models\Detail;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Notifications\Facades\Vonage;
 use Illuminate\Support\Facades\Auth;
 
 class FirmCartController extends Controller
@@ -42,9 +43,15 @@ class FirmCartController extends Controller
     }
 
     public function pending($id){
+        $firm=Detail::where('user_id',Auth::user()->id)->first();
         $cart=Cart::find($id);
 
         $cart->is_complete=1;
+        Vonage::message()->send([
+            'to'=>'254743621073',
+            'from'=>'254718776401',
+            'text'=>"Service Verified, $firm->name , we value you, we will reach you in 20 mins"
+        ]);
 
         if($cart->save()){
             return back();

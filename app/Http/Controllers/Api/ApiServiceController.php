@@ -50,7 +50,7 @@ class ApiServiceController extends Controller
         ]);
     }
 
-    public function store($id){
+    public function store(Request $request,$id){
         $service=Service::find($id);
 
         if(!$service){
@@ -62,7 +62,7 @@ class ApiServiceController extends Controller
         $cart=new Cart();
 
         $cart->name=$service->name;
-        $cart->user_id=1;
+        $cart->user_id=$request->user_id;
         $cart->service_id=$service->id;
         $cart->details_id=$service->details_id;
 
@@ -96,6 +96,7 @@ class ApiServiceController extends Controller
             'services.rating',
             'services.picture'
         )
+        ->where('carts.user_id',$id)
         ->get();
         return response()->json(["cart"=>$cart]);
     }
