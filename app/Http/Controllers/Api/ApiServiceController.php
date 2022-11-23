@@ -19,6 +19,7 @@ class ApiServiceController extends Controller
             'details.phone_number',
             'services.id',
             'services.name',
+            'services.value',
             'services.description',
             'services.rating',
             'services.picture'
@@ -37,6 +38,7 @@ class ApiServiceController extends Controller
             'details.description as firm_description',
             'services.id',
             'services.name',
+            'services.value',
             'services.description',
             'services.rating',
             'services.picture'
@@ -89,6 +91,7 @@ class ApiServiceController extends Controller
             'details.phone_number',
             'services.id',
             'services.name',
+            'services.value',
             'services.description',
             'services.rating',
             'services.picture'
