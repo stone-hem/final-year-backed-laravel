@@ -53,7 +53,7 @@
                         <td>{{  $item->firm }}
                         <td>{{  $item->created_at->toDayDateTimeString() }}
                         <td>{{  $item->created_at->diffForHumans() }}
-                        <td> <button class="btn-danger"> <a href="">Cancel Order</a></button>
+                        <td> <button class="btn-danger"> <a href="{{ url('user/my-services/cancel/'.$item->id) }}">Cancel Order</a></button>
                     @endforeach
                 </tbody>
             </table>

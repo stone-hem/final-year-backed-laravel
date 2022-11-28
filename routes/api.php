@@ -20,6 +20,7 @@ Route::controller(ApiServiceController::class)->group(function(){
     Route::get('flutter/services/create/{id}','create');
     Route::post('flutter/services/store/{id}','store');
     Route::get('flutter/services/view/{id}','view');
+    Route::get('flutter/services/cancel/{id}','cancel');
 });
 
 Route::controller(ApiTechnicianController::class)->group(function(){

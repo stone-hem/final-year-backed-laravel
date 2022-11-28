@@ -72,7 +72,8 @@ class UserServiceController extends Controller
             'details.name as firm',
             'details.location',
             'details.phone_number',
-            'services.id',
+            'carts.id',
+            'services.id as service_id',
             'services.name',
             'services.description',
             'services.rating',
@@ -80,5 +81,14 @@ class UserServiceController extends Controller
         )
         ->get();
         return view('user.services.my-services',compact('cart'));
+    }
+
+    public function cancel($id){
+        $cancel=Cart::where('id',$id)->first();
+        if( $cancel->delete()){
+            Alert::success("info","Order has been cancelled successfully");
+            return back();
+        }
+       
     }
 }

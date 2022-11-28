@@ -115,6 +115,7 @@ Route::controller(UserServiceController::class)->group(function(){
     Route::get('user/services/details/{id}','create');
     Route::get('user/services/store/{id}','store');
     Route::get('user/my-services','view');
+    Route::get('user/my-services/cancel/{id}','cancel');
 });
 
 Route::controller(UserInstantController::class)->group(function(){

@@ -86,10 +86,11 @@ class ApiServiceController extends Controller
         ->join('details','details.id','=','carts.details_id')
         ->select(
             'carts.created_at',
+            'carts.id',
             'details.name as firm',
             'details.location',
             'details.phone_number',
-            'services.id',
+            'services.id as service_id',
             'services.name',
             'services.value',
             'services.description',
@@ -99,5 +100,12 @@ class ApiServiceController extends Controller
         ->where('carts.user_id',$id)
         ->get();
         return response()->json(["cart"=>$cart]);
+    }
+    public function cancel($id){
+        $cancel=Cart::where('id',$id)->first();
+        if( $cancel->delete()){
+            return response()->json("Order Cancelled");
+        }
+       
     }
 }
