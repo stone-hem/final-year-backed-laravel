@@ -11,10 +11,12 @@ use App\Http\Controllers\Firm\FirmDetailController;
 use App\Http\Controllers\Clerk\ClerkMembersController;
 use App\Http\Controllers\Firm\FirmCartController;
 use App\Http\Controllers\Firm\FirmDashboardController;
+use App\Http\Controllers\Firm\FirmInstantController;
 use App\Http\Controllers\Technician\TechnicianCartController;
 use App\Http\Controllers\Technician\TechnicianDetailController;
 use App\Http\Controllers\Technician\TechnicianServiceController;
 use App\Http\Controllers\Technician\TechnicianDashboardController;
+use App\Http\Controllers\Technician\TechnicianInstantController;
 use App\Http\Controllers\User\UserDashboardController;
 use App\Http\Controllers\User\UserFirmController;
 use App\Http\Controllers\User\UserInstantController;
@@ -66,6 +68,12 @@ Route::controller(FirmCartController::class)->group(function(){
     Route::get('firm/cart/pending/{id}','pending');
 });
 
+Route::controller(FirmInstantController::class)->group(function(){
+    Route::get('firm/instant','index');
+    Route::get('firm/instant/accept','accept');
+    Route::get('firm/instant/reject','reject');
+});
+
 //technician
 Route::controller(TechnicianDashboardController::class)->group(function(){
     Route::get('technician/dashboard','index');
@@ -91,6 +99,12 @@ Route::controller(TechnicianDetailController::class)->group(function(){
 Route::controller(TechnicianCartController::class)->group(function(){
     Route::get('technician/cart','index');
     Route::get('technician/cart/pending/{id}','done');
+});
+
+Route::controller(TechnicianInstantController::class)->group(function(){
+    Route::get('technician/instant','index');
+    Route::get('technician/instant/accept','accept');
+    Route::get('technician/instant/reject','reject');
 });
 
 //user
@@ -120,11 +134,14 @@ Route::controller(UserServiceController::class)->group(function(){
 
 Route::controller(UserInstantController::class)->group(function(){
     Route::get('user/instant','index');
+    Route::get('user/my-instant','instant');
     Route::get('user/instant/description/{id}','description');
+    Route::post('user/instant/description/post/{id}','store');
+    Route::get('user/instant/delete/{id}','destroy');
 });
 
 
-//firm
+//admin
 
 Route::controller(AdminDashboardController::class)->group(function(){
     Route::get('admin/home','index');

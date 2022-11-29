@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('instants', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('description');
+            $table->string('user_current_location');
+            $table->foreignId('user_id')->constrained('users');
+            $table->unsignedBigInteger('firm_or_technician');
             $table->timestamps();
         });
     }

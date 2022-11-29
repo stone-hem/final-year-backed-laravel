@@ -143,23 +143,23 @@
                 <span>My pending requests</span>
               </a>
             </li>
-            <li>
-              <a href="#0">
+            <li class="{{ request()->is('firm/instant*') ? 'active' : '' }}">
+              <a href="{{ url('firm/instant') }}">
                 <svg>
                   <use xlink:href="#trends"></use>
                 </svg>
-                <span>Trends</span>
+                <span>Instant Orders</span>
               </a>
             </li>
            
-            {{-- <li>
+            <li>
               <a href="#0">
                 <svg>
                   <use xlink:href="#comments"></use>
                 </svg>
                 <span>Comments</span>
               </a>
-            </li> --}}
+            </li>
             <li>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf

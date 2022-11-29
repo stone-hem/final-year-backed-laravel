@@ -28,7 +28,7 @@
                     {{ session()->get('info') }}
                 </div>
             @endif
-            <form action="#" method="post" enctype="multipart/form-data">
+            <form action="{{ url('user/instant/description/post/'.$details->id) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <label for="field1"><span>Issue Title<span class="required">*</span></span>
                     <input type="text" class="input-field" name="title" value="{{ old('title') }}" />

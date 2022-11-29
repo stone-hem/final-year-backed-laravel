@@ -143,12 +143,12 @@
                 <span>Pending services</span>
               </a>
             </li>
-            <li>
-              <a href="#0">
+            <li class="{{ request()->is('technician/instant*') ? 'active' : '' }}">
+              <a href="{{ url('technician/instant') }}">
                 <svg>
                   <use xlink:href="#comments"></use>
                 </svg>
-                <span>Comments</span>
+                <span>Requested Instants</span>
               </a>
             </li>
             <li>

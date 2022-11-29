@@ -160,6 +160,14 @@
                 <span>Request instant help</span>
               </a>
             </li>
+            <li class="{{ request()->is('user/my-instant*') ? 'active' : '' }}">
+              <a href="{{ url('user/my-instant') }}">
+                <svg>
+                  <use xlink:href="#comments"></use>
+                </svg>
+                <span>Requested Instant</span>
+              </a>
+            </li>
             <li>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
