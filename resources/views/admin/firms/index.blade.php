@@ -15,18 +15,16 @@
       @endsection
         <div class="user-box first-box">
             <div class="activity card" style="--delay: .2s">
-                <div class="title">Firms</div>
-                <div class="subtitle">Hoo - is an adaptive Online Courses Application with a wide range of course
-                    directions. The students will have a great possibility to study.</div>
+                <div class="title">{{ $best_firm->tech_name }}</div>
+                <div class="subtitle">This firm has been able to accumulate a total of --- bids.. </div>
                 <div class="activity-links">
-                    <div class="activity-link active">Current User</div>
-                    <div class="activity-link notify">User Request</div>
+                    <div class="activity-link active">Most bidded firm</div>
                 </div>
                 <div class="destination">
                     <div class="destination-card">
                         <div class="destination-profile">
                             <img class="profile-img"
-                                src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"
+                                src="{{ asset('storage/'.$best_firm->org_pic) }}"
                                 alt="" />
                             <div class="destination-length">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
@@ -35,44 +33,24 @@
                                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
                                     <circle cx="12" cy="10" r="3" />
                                 </svg>
-                                45.4m
+                                {{ $best_firm->location }}
                             </div>
                         </div>
                         <div class="destination-points">
-                            <div class="point">Traffic Point</div>
-                            <div class="sub-point">Brooklyn St, NY</div>
-                        </div>
-                    </div>
-                    <div class="destination-card">
-                        <div class="destination-profile">
-                            <img class="profile-img"
-                                src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
-                                alt="" />
-                            <div class="destination-length">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="feather feather-map-pin">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                                    <circle cx="12" cy="10" r="3" />
-                                </svg>
-                                42.8m
-                            </div>
-                        </div>
-                        <div class="destination-points">
-                            <div class="point">Pickup Point</div>
-                            <div class="sub-point">Maryland 17, NY</div>
+                            <div class="point">{{ $best_firm->name }}</div>
+                            <div class="sub-point">{{ $best_firm->email }}</div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="discount card" style="--delay: .4s">
-                <div class="title">Discount Offers</div>
+                <div class="title">Best Earning firm</div>
                 <div class="discount-wrapper">
                     <div class="discount-info">
-                        <div class="subtitle">The Best Offer is:</div>
+                        <div class="subtitle">Earnings</div>
                         <div class="subtitle-count">$5</div>
-                        <div class="subtitle">Distance:</div>
-                        <div class="subtitle-count dist">4.5 Km</div>
+                        <div class="subtitle">Clients Handled:</div>
+                        <div class="subtitle-count dist">4</div>
                     </div>
                     <div class="discount-chart">
                         <div class="circle">
@@ -86,67 +64,52 @@
                     </div>
                 </div>
                 <div class="discount-profile">
-                    <span class="by">By:</span>
+                    <span class="by">Profile:</span>
                     <img class="discount-img"
-                        src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
+                    src="{{ asset('storage/'.$best_firm->org_pic) }}"
                         alt="">
                     <div class="discount-detail">
-                        <div class="discount-name">Johnny Cauld</div>
-                        <div class="discount-type">Micro bus & Travel Bus</div>
+                        <div class="discount-name">{{ $best_firm->name }}</div>
+                        <div class="discount-type">{{ $best_firm->description }}</div>
                     </div>
                 </div>
-                <div class="button offer-button">Get Offer</div>
+                <div class="button offer-button">View more..</div>
             </div>
 
-            <div class="account-wrapper" style="--delay: .8s">
-                <div class="account-profile">
-                    <img src="https://images.unsplash.com/photo-1550314124-301ca0b773ae?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2215&q=80"
-                        alt="">
-                    <div class="blob-wrap">
-                        <div class="blob"></div>
-                        <div class="blob"></div>
-                        <div class="blob"></div>
-                    </div>
-                    <div class="account-name">Mike J Morgan</div>
-                    <div class="account-title">Taxi Driver</div>
-                </div>
-                <div class="account card">
-                    <div class="account-cash">$ 5637.04</div>
-                    <div class="account-income">Total Income</div>
-                    <div class="account-iban">**** **** **** 3060</div>
-                </div>
-            </div>
+          
         </div>
         <div class="user-box second-box">
             <div class="cards-wrapper" style="--delay: 1s">
                 <div class="cards-header">
                     <div class="cards-header-date">
-                        <div class="title">My Current Units</div>  
+                        <div class="title">Technicians</div>
                     </div>
                     <div class="cards-button button">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
                             <path d="M12 5v14M5 12h14" />
                         </svg>
-                        Create
+                        View Pdf
                     </div>
                 </div>
                 <div class="cards card">
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Unit</th>
                                 <th>Name</th>
+                                <th>Location</th>
                                 <th>Description</th>
+                                <th>Phone number</th>
                                 <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($firm as $item)
                             <tr>
-                                <td>John D</td>
-                                <td>Sudbury Station</td>
-                                <td>Center Plaza</td>
-                               
+                                <td>{{ $item->firm_name }}</td>
+                                <td>{{ $item->location }}</td>
+                                <td>{{ $item->description }}</td>
+                                <th>{{ $item->phone_number }}</th>
                                 <td>
                                     <div class="status is-green"><svg viewBox="0 0 24 24" fill="none"
                                             stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -157,6 +120,8 @@
                                     </div>
                                 </td>
                             </tr>
+                            @endforeach
+                          
                            
                         </tbody>
                     </table>
@@ -166,7 +131,7 @@
             <div class="card transection" style="--delay: 1.2s">
                 <div class="transection-header">
                     <div class="head">Transactions</div>
-                    <div class="head is-wait">View All</div>
+                    <div class="head is-wait">Amount</div>
                 </div>
                 <div class="credit-wrapper">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 291.764 291.764"
@@ -208,108 +173,10 @@
                     </div>
                     <div class="credit-money is-active">+$3.00</div>
                 </div>
-                <div class="credit-wrapper">
-                    <svg viewBox="0 0 504 504" style="background-color: #046fcf">
-                        <path xmlns="http://www.w3.org/2000/svg" fill="#fff" data-original="#2fabf7"
-                            d="M43.2 207.6h17.6L52 185.2z" />
-                        <path xmlns="http://www.w3.org/2000/svg"
-                            d="M261.6 188.4c-1.6-.8-4-.8-6.4-.8h-16v12.8h16c2.4 0 4.8 0 6.4-.8s2.4-3.2 2.4-5.6c.8-3.2-.8-4.8-2.4-5.6z"
-                            fill="#fff" data-original="#228fe0" />
-                        <path xmlns="http://www.w3.org/2000/svg"
-                            d="M432.8 164.4v9.6l-4.8-9.6h-37.6v9.6l-4.8-9.6h-51.2c-8.8 0-16 1.6-22.4 4.8v-4.8h-36v4.8c-4-3.2-8.8-4.8-15.2-4.8H132l-8.8 20-8.8-20H73.6v9.6l-4.8-9.6H34.4l-16 37.6L0 243.6h40.8l4.8-12.8h11.2l4.8 12.8H108V234l4 9.6h23.2l4-9.6v9.6h111.2v-20.8h1.6c1.6 0 1.6 0 1.6 2.4v17.6h57.6V238c4.8 2.4 12 4.8 21.6 4.8h24l4.8-12.8h11.2l4.8 12.8H424v-12l7.2 12h37.6v-78.4h-36zm-270.4 67.2h-13.6v-44l-19.2 44h-12l-19.2-44v44H71.2l-5.6-12H38.4l-4.8 12.8H18.4l24-56.8h20l22.4 53.6v-53.6h21.6L124 214l16-38.4h22.4v56zm54.4-44h-31.2V198H216v11.2h-30.4v11.2h31.2v12H172v-56.8h44.8v12zm60 23.2c1.6 3.2 2.4 5.6 2.4 10.4v11.2h-13.6v-7.2c0-3.2 0-8-2.4-11.2-2.4-2.4-4.8-2.4-9.6-2.4h-14.4v20.8h-13.6v-56.8H256c7.2 0 12 0 16 2.4s6.4 6.4 6.4 12.8c0 8.8-5.6 13.6-9.6 15.2 4 .8 6.4 3.2 8 4.8zm24 20.8h-13.6v-56.8h13.6v56.8zm157.6 0h-19.2l-25.6-42.4v42.4h-27.2l-4.8-12h-28l-4.8 12.8h-15.2c-6.4 0-14.4-1.6-19.2-6.4-4.8-4.8-7.2-11.2-7.2-21.6 0-8 1.6-16 7.2-22.4 4-4.8 11.2-6.4 20-6.4h12.8v12h-12.8c-4.8 0-7.2.8-10.4 3.2-2.4 2.4-4 7.2-4 12.8 0 6.4.8 10.4 4 13.6 2.4 2.4 5.6 3.2 9.6 3.2h5.6l18.4-44h20L400 230v-53.6h20l23.2 39.2v-39.2h13.6v55.2h1.6z"
-                            fill="#fbfbfb" data-original="#0571c1" />
-                        <g xmlns="http://www.w3.org/2000/svg">
-                            <path fill="#fff" data-original="#228fe0"
-                                d="M358.4 207.6h18.4l-8.8-22.4zM222.4 322.8v-45.6l-20.8 22.4z" />
-                        </g>
-                        <path xmlns="http://www.w3.org/2000/svg" fill="#fff" data-original="#2fabf7"
-                            d="M136.8 282.8v10.4h29.6v11.2h-29.6v12h32.8l15.2-16.8-14.4-16.8z" />
-                        <path xmlns="http://www.w3.org/2000/svg"
-                            d="M252.8 282.8H236v14.4h17.6c4.8 0 8-2.4 8-7.2-.8-4.8-4-7.2-8.8-7.2z" fill="#fff"
-                            data-original="#228fe0" />
-                        <path xmlns="http://www.w3.org/2000/svg"
-                            d="M500 296.4v-36h-33.6c-7.2 0-12.8 1.6-16.8 4.8v-4.8h-36.8c-5.6 0-12.8 1.6-16 4.8v-4.8H332v4.8c-4.8-4-13.6-4.8-17.6-4.8h-43.2v4.8c-4-4-13.6-4.8-18.4-4.8h-48l-11.2 12-10.4-12h-72v78.4h70.4l11.2-12 10.4 12h43.2v-18.4h5.6c5.6 0 12.8 0 18.4-2.4v21.6h36v-20.8h1.6c2.4 0 2.4 0 2.4 2.4v18.4h108.8c7.2 0 14.4-1.6 18.4-4.8v4.8H472c7.2 0 14.4-.8 19.2-4 8-4.8 12.8-13.6 12.8-24 0-5.6-1.6-11.2-4-15.2zm-248 12.8h-16v19.2h-25.6l-16-18.4-16.8 18.4h-52.8v-56.8h53.6l16 18.4 16.8-18.4h42.4c10.4 0 22.4 3.2 22.4 18.4-.8 16-12 19.2-24 19.2zm80-3.2c1.6 2.4 2.4 5.6 2.4 10.4v11.2h-13.6v-7.2c0-3.2 0-8.8-2.4-11.2-1.6-2.4-4.8-2.4-9.6-2.4h-14.4v20.8h-13.6v-56.8h30.4c6.4 0 12 0 16 2.4s7.2 6.4 7.2 12.8c0 8.8-5.6 13.6-9.6 15.2 4 1.6 6.4 3.2 7.2 4.8zm55.2-23.2H356v10.4h30.4v11.2H356v11.2h31.2v12h-44.8v-56.8h44.8v12zm33.6 44.8h-25.6v-12h25.6c2.4 0 4 0 5.6-1.6.8-.8 1.6-2.4 1.6-4s-.8-3.2-1.6-4c-.8-.8-2.4-1.6-4.8-1.6-12.8-.8-28 0-28-17.6 0-8 4.8-16.8 19.2-16.8h26.4v13.6h-24.8c-2.4 0-4 0-5.6.8s-1.6 2.4-1.6 4c0 2.4 1.6 3.2 3.2 4s3.2.8 4.8.8h7.2c7.2 0 12 1.6 15.2 4.8 2.4 2.4 4 6.4 4 12 0 12-7.2 17.6-20.8 17.6zm68.8-5.6c-3.2 3.2-8.8 5.6-16.8 5.6h-25.6v-12h25.6c2.4 0 4 0 5.6-1.6.8-.8 1.6-2.4 1.6-4s-.8-3.2-1.6-4c-.8-.8-2.4-1.6-4.8-1.6-12.8-.8-28 0-28-17.6 0-8 4.8-16.8 19.2-16.8h26.4v13.6h-24c-2.4 0-4 0-5.6.8s-1.6 2.4-1.6 4c0 2.4.8 3.2 3.2 4 1.6.8 3.2.8 4.8.8h7.2c7.2 0 12 1.6 15.2 4.8.8 0 .8.8.8.8 2.4 3.2 3.2 7.2 3.2 11.2 0 4.8-1.6 8.8-4.8 12z"
-                            fill="#fbfbfb" data-original="#0571c1" />
-                        <path xmlns="http://www.w3.org/2000/svg"
-                            d="M317.6 284.4c-1.6-.8-4-.8-6.4-.8h-16v12.8h16c2.4 0 4.8 0 6.4-.8s2.4-3.2 2.4-5.6c.8-3.2-.8-4.8-2.4-5.6z"
-                            fill="#fff" data-original="#228fe0" />
-                        <g xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M261.6 188.4c-1.6-.8-4-.8-6.4-.8h-16v12.8h16c2.4 0 4.8 0 6.4-.8s2.4-3.2 2.4-5.6c.8-3.2-.8-4.8-2.4-5.6zM358.4 207.6h18.4l-8.8-22.4zM222.4 322.8v-45.6l-20.8 22.4z"
-                                fill="#fff" data-original="#228fe0" />
-                        </g>
-                        <path
-                            d="M252.8 282.8H236v14.4h17.6c4.8 0 8-2.4 8-7.2-.8-4.8-4-7.2-8.8-7.2zM317.6 284.4c-1.6-.8-4-.8-6.4-.8h-16v12.8h16c2.4 0 4.8 0 6.4-.8s2.4-3.2 2.4-5.6c.8-3.2-.8-4.8-2.4-5.6z"
-                            fill="#fff" data-original="#228fe0" xmlns="http://www.w3.org/2000/svg" />
-                        <g xmlns="http://www.w3.org/2000/svg">
-                            <path fill="#fff" data-original="#2fabf7"
-                                d="M247.2 326L236 314v13.6h-26.4l-16-18.4-17.6 18.4h-52.8v-56h53.6l16.8 18.4 8-9.6-20-20h-70.4v78.4h70.4l12-12 10.4 12h43.2zM164 242.8l-10.4-11.2h-4.8v-4.8l-12-12-8 16.8h-11.2l-19.2-44v44H71.2l-5.6-12H38.4l-5.6 12H18.4l24-56h20l22.4 53.6v-53.6h12l-11.2-11.2h-12v9.6l-4-9.6H34.4l-16 37.6L0 242.8H41.6l4.8-12h11.2l5.6 12H108v-9.6l4 9.6h23.2l4-9.6v9.6z" />
-                            <path fill="#fff" data-original="#2fabf7" d="M127.2 206l-12.8-12.8L124 214z" />
-                        </g>
-                        <g xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M491.2 334.8c7.2-4.8 12-12.8 12.8-21.6L492.8 302c.8 2.4 1.6 4.8 1.6 8 0 4.8-1.6 8.8-4.8 12-3.2 3.2-8.8 5.6-16.8 5.6h-25.6v-12h25.6c2.4 0 4 0 5.6-1.6.8-.8 1.6-2.4 1.6-4s-.8-3.2-1.6-4c-.8-.8-2.4-1.6-4.8-1.6-12.8-.8-28 0-28-17.6 0-8 4.8-15.2 16.8-16.8l-8.8-8.8c-1.6.8-2.4 1.6-3.2 1.6V258h-36.8c-5.6 0-12.8 1.6-16 4.8V258H332v4.8c-4.8-4-13.6-4.8-17.6-4.8h-43.2v4.8c-4-4-13.6-4.8-18.4-4.8h-48l-11.2 12-10.4-12h-8.8l24 24 12-12.8h42.4c10.4 0 22.4 3.2 22.4 18.4 0 16-11.2 19.2-23.2 19.2h-16v12l12 12v-12h4c5.6 0 12.8 0 18.4-2.4V338h36v-20.8h1.6c2.4 0 2.4 0 2.4 2.4V338h108.8c7.2 0 14.4-1.6 18.4-4.8v4.8H472c6.4.8 13.6 0 19.2-3.2zM332 306c1.6 2.4 2.4 5.6 2.4 10.4v11.2h-13.6v-7.2c0-3.2 0-8.8-2.4-11.2-1.6-2.4-4.8-2.4-9.6-2.4h-14.4v20.8h-13.6v-56.8h30.4c6.4 0 12 0 16 2.4s7.2 6.4 7.2 12.8c0 8.8-5.6 13.6-9.6 15.2 4 1.6 6.4 3.2 7.2 4.8zm55.2-23.2H356v10.4h30.4v11.2H356v11.2h31.2v12h-44.8v-56.8h44.8v12zm33.6 44.8h-25.6v-12h25.6c2.4 0 4 0 5.6-1.6.8-.8 1.6-2.4 1.6-4s-.8-3.2-1.6-4c-.8-.8-2.4-1.6-4.8-1.6-12.8-.8-28 0-28-17.6 0-8 4.8-16.8 19.2-16.8h26.4v13.6h-24.8c-2.4 0-4 0-5.6.8s-1.6 2.4-1.6 4c0 2.4 1.6 3.2 3.2 4s3.2.8 4.8.8h7.2c7.2 0 12 1.6 15.2 4.8 2.4 2.4 4 6.4 4 12 0 12-7.2 17.6-20.8 17.6z"
-                                fill="#fff" data-original="#228fe0" />
-                            <path
-                                d="M459.2 288.4c0 2.4.8 3.2 3.2 4 1.6.8 3.2.8 4.8.8h7.2c4.8 0 8 .8 11.2 2.4l-12-12h-7.2c-2.4 0-4 0-5.6.8-.8.8-1.6 2.4-1.6 4zM431.2 240.4l1.6 2.4h.8zM387.2 196.4l13.6 32.8V210z"
-                                fill="#fff" data-original="#228fe0" />
-                            <path
-                                d="M250.4 222.8h1.6c1.6 0 1.6 0 1.6 2.4v17.6h57.6V238c4.8 2.4 12 4.8 21.6 4.8h24l4.8-12.8h11.2l4.8 12.8H424v-8l-11.2-11.2v8.8h-27.2l-4-12.8h-28l-4.8 12.8h-15.2c-6.4 0-14.4-1.6-19.2-6.4-4.8-4.8-7.2-11.2-7.2-21.6 0-8 1.6-16 7.2-22.4 4-4.8 11.2-6.4 20-6.4h12.8v12h-12.8c-4.8 0-7.2.8-10.4 3.2-2.4 2.4-4 7.2-4 12.8 0 6.4.8 10.4 4 13.6 2.4 2.4 5.6 3.2 9.6 3.2h5.6l18.4-44h8l-11.2-11.2h-20.8c-8.8 0-16 1.6-22.4 4.8v-4.8H276v4.8c-4-3.2-8.8-4.8-15.2-4.8H132l-8.8 20-8.8-20H79.2l11.2 11.2h16L120 206l4.8 4.8 14.4-35.2h22.4v56.8H148v-44l-13.6 32 23.2 23.2h92l.8-20.8zm36.8-47.2h13.6v56.8h-13.6v-56.8zm-70.4 12h-31.2V198H216v11.2h-30.4v11.2h31.2v12H172v-56.8h44.8v12zm22.4 44h-13.6v-56.8H256c7.2 0 12 0 16 2.4s6.4 6.4 6.4 12.8c0 8.8-5.6 13.6-9.6 15.2 3.2.8 5.6 3.2 6.4 4.8 1.6 3.2 2.4 5.6 2.4 10.4v11.2H264v-7.2c0-3.2 0-8-2.4-11.2-.8-1.6-3.2-1.6-8-1.6h-14.4v20z"
-                                fill="#fff" data-original="#228fe0" />
-                        </g>
-                    </svg>
-                    <div class="credit-name">
-                        <div class="credit-type">American Express</div>
-                        <div class="credit-status">Payment Waiting</div>
-                    </div>
-                    <div class="credit-money is-wait">+$53.25</div>
-                </div>
-                <div class="credit-wrapper">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 469.351 469.351"
-                        style="background-color: #0365b3">
-                        <path xmlns="http://www.w3.org/2000/svg"
-                            d="M356.626 85.086a37.887 37.887 0 00-38.763-8.277 10.668 10.668 0 00-7.168 8.533l-2.987 20.523c-4.529 30.998-31.052 54.019-62.379 54.144h-42.667a10.666 10.666 0 00-10.347 8.085l-32 128a10.667 10.667 0 0010.346 13.248h53.333a10.666 10.666 0 0010.347-8.085l19.307-77.248h41.6c31.934.106 59.792-21.66 67.413-52.672l7.872-31.552a56.099 56.099 0 00-13.907-54.699z"
-                            fill="#e6f0f9" data-original="#03a9f4" />
-                        <g xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M10.664 437.342C4.773 437.341-.002 432.564 0 426.673c0-.869.107-1.735.317-2.578l10.667-42.453v-.448l10.667-42.432a10.666 10.666 0 0110.347-8.085h27.136c14.728-.003 26.669 11.933 26.673 26.661 0 2.181-.267 4.354-.795 6.47l-2.667 10.667c-2.967 11.875-13.637 20.205-25.877 20.203H29.672l-8.64 34.581a10.667 10.667 0 01-10.368 8.083zm24.341-64h21.461a5.335 5.335 0 005.163-4.053l2.667-10.667a5.311 5.311 0 00-5.163-6.634H40.338l-5.333 21.354zM124.733 437.342h-15.189c-16.33.004-29.571-13.231-29.575-29.561a29.56 29.56 0 01.882-7.175l1.408-5.675c3.157-12.736 14.612-21.662 27.733-21.611h15.189c16.33.028 29.545 13.289 29.517 29.619a29.561 29.561 0 01-.887 7.138l-1.408 5.675c-3.16 12.705-14.579 21.614-27.67 21.59zm-23.168-31.552a8.234 8.234 0 007.979 10.219h15.189a7.147 7.147 0 006.955-5.419l1.408-5.675a8.234 8.234 0 00-7.979-10.219h-15.189a7.147 7.147 0 00-6.955 5.419l-1.408 5.675z"
-                                fill="#fff" data-original="#283593" />
-                            <path
-                                d="M138.664 437.342a10.667 10.667 0 01-10.347-13.248l10.667-42.667c1.426-5.72 7.218-9.202 12.939-7.776 5.72 1.426 9.202 7.218 7.776 12.939l-10.667 42.667a10.666 10.666 0 01-10.368 8.085z"
-                                fill="#fff" data-original="#283593" />
-                        </g>
-                        <g xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M266.664 437.342a10.667 10.667 0 01-10.347-13.248l10.667-42.453v-.448l10.667-42.432a10.666 10.666 0 0110.347-8.085h27.136c14.728-.003 26.669 11.933 26.673 26.661 0 2.181-.267 4.354-.795 6.47l-2.667 10.667c-2.967 11.875-13.637 20.205-25.877 20.203h-26.795l-8.64 34.581a10.669 10.669 0 01-10.369 8.084zm24.341-64h21.483a5.335 5.335 0 005.163-4.053l2.667-10.667a5.312 5.312 0 00-5.163-6.634h-18.816l-5.334 21.354zM380.733 437.342h-15.189c-16.33.004-29.571-13.231-29.575-29.561a29.56 29.56 0 01.882-7.175l1.408-5.675c3.157-12.736 14.612-21.662 27.733-21.611h15.189c16.33-.004 29.571 13.231 29.575 29.561a29.56 29.56 0 01-.882 7.175l-1.408 5.675c-3.157 12.736-14.612 21.662-27.733 21.611zm-23.168-31.552a8.234 8.234 0 007.979 10.219h15.189a7.147 7.147 0 006.955-5.419l1.408-5.675a8.234 8.234 0 00-7.979-10.219h-15.189a7.147 7.147 0 00-6.955 5.419l-1.408 5.675z"
-                                fill="#e6f0f9" data-original="#03a9f4" />
-                            <path
-                                d="M394.664 437.342a10.667 10.667 0 01-10.347-13.248l10.667-42.667c1.426-5.72 7.218-9.202 12.939-7.776 5.72 1.426 9.202 7.218 7.776 12.939l-10.667 42.667a10.666 10.666 0 01-10.368 8.085z"
-                                fill="#e6f0f9" data-original="#03a9f4" />
-                        </g>
-                        <g xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M202.664 426.676a10.668 10.668 0 01-8.875-4.757l-21.333-32c-3.27-4.901-1.947-11.525 2.955-14.795s11.525-1.947 14.795 2.955l21.333 32c3.275 4.897 1.961 11.521-2.935 14.797a10.681 10.681 0 01-5.94 1.8z"
-                                fill="#fff" data-original="#283593" />
-                            <path
-                                d="M181.33 458.676c-5.891-.002-10.665-4.78-10.663-10.671a10.667 10.667 0 012.471-6.823l53.333-64c3.776-4.524 10.505-5.131 15.029-1.355 4.524 3.776 5.131 10.505 1.355 15.029l-53.333 64a10.663 10.663 0 01-8.192 3.82z"
-                                fill="#fff" data-original="#283593" />
-                        </g>
-                        <path xmlns="http://www.w3.org/2000/svg"
-                            d="M437.33 437.342a10.667 10.667 0 01-10.347-13.248l21.333-85.333c1.426-5.72 7.218-9.202 12.939-7.776 5.72 1.426 9.202 7.218 7.776 12.939l-21.333 85.333a10.665 10.665 0 01-10.368 8.085z"
-                            fill="#e6f0f9" data-original="#03a9f4" />
-                        <path xmlns="http://www.w3.org/2000/svg"
-                            d="M321.405 29.129a53.908 53.908 0 00-40.661-18.453H159.997a10.666 10.666 0 00-10.496 8.768L106.834 254.11c-1.049 5.797 2.801 11.346 8.598 12.395.626.113 1.262.17 1.898.17h64a10.666 10.666 0 0010.347-8.085l19.328-77.248h34.325c41.958-.165 77.478-31.012 83.52-72.533l5.333-36.459a54.332 54.332 0 00-12.778-43.221z"
-                            fill="#fff" data-original="#283593" />
-                    </svg>
-                    <div class="credit-name">
-                        <div class="credit-type">Paypal</div>
-                        <div class="credit-status">Payment Cancelled</div>
-                    </div>
-                    <div class="credit-money is-cancel">+$3.945</div>
-                </div>
             </div>
         </div>
     </div>
 </div>
+<script src="{{ asset('js/live-time.js') }}"></script>
 </body>
 </html>

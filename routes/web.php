@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\AdminFirmController;
+use App\Http\Controllers\Admin\AdminReportController;
 use App\Http\Controllers\Admin\AdminTechnicianController;
 use App\Http\Controllers\Admin\AdminUserController;
 use Illuminate\Support\Facades\Route;
@@ -12,6 +13,7 @@ use App\Http\Controllers\Clerk\ClerkMembersController;
 use App\Http\Controllers\Firm\FirmCartController;
 use App\Http\Controllers\Firm\FirmDashboardController;
 use App\Http\Controllers\Firm\FirmInstantController;
+use App\Http\Controllers\PdfController;
 use App\Http\Controllers\Technician\TechnicianCartController;
 use App\Http\Controllers\Technician\TechnicianDetailController;
 use App\Http\Controllers\Technician\TechnicianServiceController;
@@ -155,6 +157,13 @@ Route::controller(AdminTechnicianController::class)->group(function(){
     Route::get('admin/technicians','index');
 });
 
-Route::controller(AdminUserController::class)->group(function(){
-    Route::get('admin/users','index');
+Route::controller(AdminReportController::class)->group(function(){
+    Route::get('admin/reports','index');
+});
+
+Route::controller(PdfController::class)->group(function(){
+    Route::get('pdf/users','users');
+    Route::get('pdf/firms','firms');
+    Route::get('pdf/technicians','technicians');
+    Route::get('pdf/services','services');
 });

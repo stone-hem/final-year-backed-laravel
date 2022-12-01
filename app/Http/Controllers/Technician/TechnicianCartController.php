@@ -15,6 +15,9 @@ class TechnicianCartController extends Controller
         ->where('details.user_id',Auth::user()->id)
         ->select('details.id')
         ->first();
+        if (!$detail) {
+            return view('technician.cart.index');
+        }
 
         $cart=Cart::join('users','users.id','=','carts.user_id')
         ->join('details','details.id','=','carts.details_id')
