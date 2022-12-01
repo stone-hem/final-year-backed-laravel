@@ -72,8 +72,8 @@ Route::controller(FirmCartController::class)->group(function(){
 
 Route::controller(FirmInstantController::class)->group(function(){
     Route::get('firm/instant','index');
-    Route::get('firm/instant/accept','accept');
-    Route::get('firm/instant/reject','reject');
+    Route::get('firm/instant/accept/{id}','accept');
+    Route::get('firm/instant/reject{id}','reject');
 });
 
 //technician

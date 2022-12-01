@@ -53,9 +53,9 @@
                         <td>{{ $item->created_at->toDayDateTimeString() }}
                         <td>{{ $item->username }}
                         <td><button class="btn-primary"> <a
-                                    href="{{ url('firm/instant/accept') }}">Accept</a></button>
+                                    href="{{ url('firm/instant/accept/'.$item->id) }}">Accept</a></button>
                         <td> <button class="btn-danger"> <a
-                                    href="{{ url('firm/instant/reject') }}">Delete</a></button>
+                                    href="{{ url('firm/instant/reject/'.$item->id) }}">Delete</a></button>
                 @endforeach
                     @endif
                 </tbody>

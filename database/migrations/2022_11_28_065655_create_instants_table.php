@@ -18,12 +18,12 @@ return new class extends Migration
             $table->string('title');
             $table->string('description');
             $table->string('user_current_location');
+            $table->boolean('is_approve')->default(0);
             $table->foreignId('user_id')->constrained('users');
             $table->unsignedBigInteger('firm_or_technician');
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *
